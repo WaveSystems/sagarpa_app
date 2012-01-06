@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title Control de parque vehicular SAGARPA
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #page
+      #sesion
+        %p(class = 'notice')= notice
+        %p(class = 'alert')= alert
+      #header
+        #app_logo
+      #navigation(align = "center") 
+        #op1(align = "center")
+          = link_to "Inicio", root_path
+        #op2(align = "center")
+          = link_to "Solicitante", menu_solicitante_path
+        #op3(align = "center")
+          Acerca de
+        #op4(align = "center")
+          Contacto
+        #status(align = "center")
+          -if user_signed_in?
+            = current_user.email
+            = link_to "Salir", destroy_user_session_path, :method => :delete
+          -else
+            =link_to "Autentificarse", new_user_session_path
+            =link_to "Registrarse", new_user_registration_path
+      #section
+        #article
+          = yield
+      #footer

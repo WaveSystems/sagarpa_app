@@ -1,0 +1,57 @@
+= form_for @permiso, :url => "create" do |f|
+  %b= f.label :folio
+  = f.label "#{@folio}"
+  %br
+  %b= f.label "Tipo de permiso"
+  %br
+  = f.radio_button :tipo,"No pernocta"
+  %b= f.label "No pernocta"
+  %br
+  = f.radio_button :tipo,"Permiso en horario de trabajo"
+  %b= f.label "Permiso en horario de trabajo"
+  %br
+  %b= f.label "Justificacion"
+  %br
+  = f.radio_button :justificacion,"Estancia del vehiculo en el taller"
+  %b= f.label "Estancia del vehiculo en el taller"
+  %br
+  = f.radio_button :justificacion,"Comision local no mayor a tres dias segun oficion de comision anexo"
+  %b= f.label "Comision local no mayor a tres dias segun oficion de comision anexo"
+  %br
+  = f.radio_button :justificacion,"Comision foranea, segun oficio de comision anexo"
+  %b= f.label "Comision foranea, segun oficio de comision anexo"
+  %br
+  = f.radio_button :justificacion,"Otro"
+  %b= f.label "Otro (Especificado en el texto)"
+  %br
+  %b= f.label :auto_id
+  = f.text_field :auto_id
+  %br
+  %b= f.label :fecha_hora_salida
+  = f.datetime_select :fecha_hora_salida
+  %br
+  %b= f.label :fecha_hora_llegada
+  = f.datetime_select :fecha_hora_llegada
+  %br
+  %b= f.label :observaciones
+  = f.text_field :observaciones
+  %br
+  %b= f.label :domicilio_pernocta
+  = f.text_field :domicilio_pernocta
+  %br
+  %b= f.label :num_oficio
+  = f.text_field :num_oficio
+  %br
+  %b= f.label :solicita_id 
+  = f.text_field :solicita_id
+  %br
+  %b= f.label :VoBo_id 
+  = f.text_field :VoBo_id
+  %br
+  %b= f.label :tramita 
+  = f.label :tramita, "Lic. Hector Hernandez Rolon"
+  %br
+  %b= f.label :autoriza 
+  = f.label :autoriza, "Dr. Salvador Becerra Rodriguez"
+  %br
+  = f.submit "Crear permiso"

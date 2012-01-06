@@ -1,0 +1,17 @@
+%table
+  %tbody
+    %tr
+      %th
+        %h1(align = "center") Bienvenido!
+    %tr
+      %th
+        %h2(align = "center") Seleccione una opcion de la lista de abajo:
+    %tr
+      %th
+        %h2(align = "center")= button_to 'Nuevo Permiso!', new_permiso_path
+    %tr
+      %th
+        %h2(align = "center")= button_to 'Editar Permiso!', edit_permiso_path
+    %tr
+      %th
+        %h2(align = "center")= button_to 'Ver historial de permisos!', history_permiso_path

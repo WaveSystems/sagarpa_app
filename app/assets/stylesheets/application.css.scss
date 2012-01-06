@@ -1,0 +1,100 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+$altura:1080px;
+$ancho:960px;
+
+body{
+}
+
+
+#page{ 
+  margin-left:auto;
+  margin-right:auto;
+  height:$altura;
+  width:$ancho;
+}
+
+#session
+{
+  float:left;
+}
+
+#header{
+  height:90px;
+  width:$ancho;
+}
+
+#app_logo{
+  height:80px;
+  width:$ancho;
+  background-image:url(sagarpa_header.jpg);
+}
+
+#navigation{
+  background-color:#646b71;
+  height:40px;
+  width:$ancho + 60px;
+  background-image:url(fondo_menu.jpg);
+}
+
+#op1{
+  float:left;
+  width: 200px;
+  font-family: "Helvetica";
+  font-size: 17px;
+  color:white;
+}
+#op2{
+  float:left;
+  width: 150px;
+  font-family: "Helvetica";
+  font-size: 17px;
+  color:white;
+}
+#op3{
+  float:left;
+  width: 200px;
+  font-family: "Helvetica";
+  font-size: 17px;
+  color:white;
+}
+
+#op4{
+  float:left;
+  width: 110px;
+  font-family: "Helvetica";
+  font-size: 17px;
+  color:white;
+}
+
+#status{
+  float:left;
+  width: 340px;
+  font-family: "Helvetica";
+  font-size: 17px;
+  color:white;
+}
+
+#section{
+  background-color:white;
+  height:$altura * 0.8;
+  width:$ancho + 60px;
+}
+
+#article{
+  float:right;
+  height:$altura * 0.8;
+  width:$ancho + 60px;
+}
+
+#footer{
+  float:left;
+  background-color:#646b71;
+  height:10px;
+  width:$ancho;
+}
