@@ -2,6 +2,16 @@ SagarpaApp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+  root :to => 'home#index'
+  get 'solicitante' => 'solicitantes#menu', :as => :menu_solicitante                                                                             
+  match 'solicitante/new' => 'solicitantes#new', :as => :new_permiso
+  match 'solicitante/create' => 'solicitantes#create'
+  match 'solicitante/edit' => 'solicitantes#edit', :as => :edit_permiso
+  match 'solicitante/history' => 'solicitantes#show_history', :as => :history_permiso
+  match 'iniciar_sesion' => 'home#log_in', :as => :contact_home
+  match 'acerca_de' => 'home#about', :as => :about_home
+  match 'contacto' => 'home#contact', :as => :contact_home
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
