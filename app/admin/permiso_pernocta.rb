@@ -1,3 +1,3 @@
-ActiveAdmin.register PermisoPernoctum do
+ActiveAdmin.register PermisoPernocta do
   
 end
