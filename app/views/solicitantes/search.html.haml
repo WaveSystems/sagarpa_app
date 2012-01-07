@@ -1,4 +1,6 @@
-= form_tag do 
-  = label_tag "Introduzca numero de folio"
+= form_tag "/solicitante/show", :remote => :true do 
+  = label_tag "Ingrese numero de folio"
   = text_field_tag :id
-  = button_tag "Editar", edit_permiso_path(:id)
+  = button_to "Buscar"
+
+#mostrar_permiso

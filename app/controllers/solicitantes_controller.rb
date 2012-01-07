@@ -12,6 +12,10 @@ class SolicitantesController < ApplicationController
   end
   def search
   end
+  # Defining show whose will be called by ajax
+  def show
+    @permiso_pernocta = PermisoPernocta.find(params[:id])
+  end
   def edit
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     @id = PermisoPernocta.find(params[:id]).id
