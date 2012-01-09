@@ -8,11 +8,12 @@ ActiveAdmin.register PermisoPernocta do
       f.input :fecha_hora_llegada
       f.input :domicilio_pernocta
       f.input :num_oficio
-      f.input :solicita_id
+      f.input :solicita_id, :as => :select, :collection => User.all
       f.input :VoBo_id
       f.input :tramito
       f.input :autorizo
     end
+    f.buttons
   end
 
   index do |f|
