@@ -1,4 +1,5 @@
 class PermisoPernocta < ActiveRecord::Base
+  belongs_to :user, :foreign_key => 'solicita_id'
   before_save :default_values
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha_hora_salida, :fecha_hora_llegada, :domicilio_pernocta, :num_oficio, :solicita_id, :VoBo_id
 
