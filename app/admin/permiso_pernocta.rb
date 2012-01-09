@@ -1,3 +1,33 @@
 ActiveAdmin.register PermisoPernocta do
-  
+  form do |f|
+    f.inputs "Permiso de Pernocta" do
+      f.input :auto_id
+      f.input :justificacion
+      f.input :observaciones
+      f.input :fecha_hora_salida
+      f.input :fecha_hora_llegada
+      f.input :domicilio_pernocta
+      f.input :num_oficio
+      f.input :solicita_id
+      f.input :VoBo_id
+      f.input :tramito
+      f.input :autorizo
+    end
+  end
+
+  index do |f|
+    f.column :id
+    f.column :auto_id
+    f.column :justificacion
+    f.column :observaciones
+    f.column :fecha_hora_salida
+    f.column :fecha_hora_llegada
+    f.column :domicilio_pernocta
+    f.column :num_oficio
+    f.column :solicita_id
+    f.column :VoBo_id
+    f.column :tramito
+    f.column :autorizo
+    default_actions
+  end
 end

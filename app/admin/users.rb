@@ -11,6 +11,7 @@ ActiveAdmin.register User do
     f.buttons
   end  
   index do |f|
+    f.column :id
     f.column :nombre
     f.column :email
     f.column :area_id
