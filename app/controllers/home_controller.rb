@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @message ='Pagina principal'
+  end
+  def contact
+  end
+  def about
   end
 end
