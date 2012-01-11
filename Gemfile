@@ -10,6 +10,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'pg'
 gem 'haml'
+gem 'gollum'
 
 
 # Gems used only for assets and not required
