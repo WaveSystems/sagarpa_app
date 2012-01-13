@@ -6,6 +6,7 @@ class SolicitantesController < ApplicationController
     @permiso_pernocta = PermisoPernocta.new
     @id = PermisoPernocta.last.id+1
     @solicita = User.find(current_user).nombre
+    @VoBo = User.find(Area.find(User.find(current_user).area_id).jefe_id).nombre
   end
   def create
     PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id))
