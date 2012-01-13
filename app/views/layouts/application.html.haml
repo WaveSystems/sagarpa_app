@@ -10,25 +10,25 @@
       #sesion
         %p(class = 'notice')= notice
         %p(class = 'alert')= alert
-      #header
+      #header	
         #app_logo
       #navigation(align = "center") 
         #op1(align = "center")
-          = link_to "Inicio", root_path
+          = link_to image_tag("Iniciobotton.jpg"), root_path
         #op2(align = "center")
-          = link_to "Solicitante", menu_solicitante_path
+          = link_to image_tag("Solicitantebotton.jpg"), menu_solicitante_path
         #op3(align = "center")
-          Acerca de
-        #op4(align = "center")
-          Contacto
+          = link_to image_tag("Vigilantebotton.jpg")
         #status(align = "center")
           -if user_signed_in?
             = current_user.email
             = link_to "Salir", destroy_user_session_path, :method => :delete
           -else
-            =link_to "Autentificarse", new_user_session_path
-            =link_to "Registrarse", new_user_registration_path
-      #section
-        #article
-          = yield
-      #footer
+            #status2(align = "center")
+              = link_to image_tag("Sesionbotton.jpg"), new_user_session_path
+            #status3(align = "center")
+              = link_to image_tag("Registrarsebotton.jpg"), new_user_registration_path
+        #section
+          #article
+            = yield
+        #footer
