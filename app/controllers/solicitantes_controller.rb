@@ -7,7 +7,9 @@ class SolicitantesController < ApplicationController
     @id = PermisoPernocta.last.id+1
     @solicita = User.find(current_user).nombre
     @VoBo = User.find(Area.find(User.find(current_user).area_id).jefe_id).nombre
+    @vehiculos = Vehiculo.where("area_id = '#{Area.find(User.find(current_user).area_id).id}'")
   end
+
   def create
     PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id))
     redirect_to menu_solicitante_path
