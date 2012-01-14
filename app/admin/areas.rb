@@ -8,4 +8,13 @@ ActiveAdmin.register Area do
     default_actions
   end
   
+  form do |f|
+    f.inputs "Area" do
+      f.input :nombre
+      f.input :jefe_id, :label => "Jefe"
+      f.input :num_personal
+      f.input :num_vehiculos
+    end
+    f.buttons
+  end
 end
