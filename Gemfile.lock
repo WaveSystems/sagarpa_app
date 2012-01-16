@@ -144,6 +144,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.0)
       rack (>= 1.0)
+    wicked_pdf (0.7.2)
 
 PLATFORMS
   ruby
@@ -159,3 +160,4 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   turn
   uglifier (>= 1.0.3)
+  wicked_pdf

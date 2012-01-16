@@ -9,6 +9,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'pg'
 gem 'haml'
+gem 'wicked_pdf'
 
 
 # Gems used only for assets and not required
