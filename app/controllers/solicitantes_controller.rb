@@ -32,4 +32,12 @@ class SolicitantesController < ApplicationController
     @user = current_user.id
     @permiso_pernocta = PermisoPernocta.where("solicita_id = '#{@user}'") 
   end
+  def show_pdf
+    @permiso_pernocta = PermisoPernocta.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render :pdf => "Permiso_Pernocta#{:id}.pdf"
+      end
+    end
+  end
 end
