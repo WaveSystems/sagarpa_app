@@ -1,1 +1,0 @@
-# Sagarpa wiki
