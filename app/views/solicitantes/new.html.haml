@@ -3,7 +3,7 @@
   = f.label "#{@id}"
   %br
   %b= f.label :auto_id
-  = f.text_field :auto_id
+  = f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
   %br
   %b= f.label "Justificacion:"
   %br

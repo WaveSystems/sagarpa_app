@@ -11,7 +11,7 @@ class SolicitantesController < ApplicationController
   end
 
   def create
-    PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id))
+    PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id, :VoBo_id => User.find(Area.find(User.find(current_user).area_id).jefe_id).id))
     redirect_to menu_solicitante_path
   end
   def search
