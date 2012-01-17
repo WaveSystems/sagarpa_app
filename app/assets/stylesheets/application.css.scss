@@ -10,20 +10,16 @@ $ancho:960px;
 
 body{
 }
-
-
 #page{ 
   margin-left:auto;
   margin-right:auto;
   height:$altura;
   width:$ancho;
 }
-
 #session
 {
   float:left;
 }
-
 #header{
   height:90px;
   width:$ancho;
@@ -59,7 +55,7 @@ body{
   font-size: 17px;
  	 color:white;
 }
-#status{
+#status1{
   float:left;	
   width: 400px;
   font-family: "Helvetica";
