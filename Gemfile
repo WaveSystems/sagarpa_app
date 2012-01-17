@@ -1,6 +1,4 @@
 source 'http://rubygems.org'
-# Hola mundo!!
-# Hola mundo!!
 
 gem 'rails', '3.1.1'
 
@@ -12,6 +10,7 @@ gem 'activeadmin'
 gem 'pg'
 gem 'haml'
 gem 'wicked_pdf'
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
