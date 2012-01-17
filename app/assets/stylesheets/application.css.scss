@@ -10,48 +10,40 @@ $ancho:960px;
 
 body{
 }
-
-
 #page{ 
   margin-left:auto;
   margin-right:auto;
   height:$altura;
   width:$ancho;
 }
-
 #session
 {
   float:left;
 }
-
 #header{
   height:90px;
   width:$ancho;
 }
-
 #app_logo{
   height:80px;
   width:$ancho;
   background-image:url(sagarpa_header.jpg);
 }
-
 #navigation{
   background-color:#646b71;
   height:40px;
   width:$ancho + 60px;
-  background-image:url(fondo_menu.jpg);
-}
-
+  background-image:url(fondo_menu.jpg); 
+}	
 #op1{
   float:left;
   width: 200px;
   font-family: "Helvetica";
   font-size: 17px;
-  color:white;
-}
+}	
 #op2{
   float:left;
-  width: 150px;
+  width: 200px;
   font-family: "Helvetica";
   font-size: 17px;
   color:white;
@@ -61,25 +53,26 @@ body{
   width: 200px;
   font-family: "Helvetica";
   font-size: 17px;
-  color:white;
+ 	 color:white;
 }
-
-#op4{
-  float:left;
-  width: 110px;
+#status1{
+  float:left;	
+  width: 400px;
   font-family: "Helvetica";
   font-size: 17px;
   color:white;
 }
-
-#status{
+#status2{
   float:left;
-  width: 340px;
+  width: 200px;
   font-family: "Helvetica";
   font-size: 17px;
-  color:white;
+  color:white;	
 }
-
+#status3{
+  float: left;
+  width: 150px;
+}
 #section{
   background-color:white;
   height:$altura * 0.8;
@@ -90,8 +83,7 @@ body{
   float:right;
   height:$altura * 0.8;
   width:$ancho + 60px;
-}
-
+}	
 #footer{
   float:left;
   background-color:#646b71;
