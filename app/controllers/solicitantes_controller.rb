@@ -4,14 +4,14 @@ class SolicitantesController < ApplicationController
   end
   def new
     @permiso_pernocta = PermisoPernocta.new
-    @id = PermisoPernocta.last.id+1
-    @solicita = User.find(current_user).nombre
-    @VoBo = User.find(Area.find(User.find(current_user).area_id).jefe_id).nombre
-    @vehiculos = Vehiculo.where("area_id = '#{Area.find(User.find(current_user).area_id).id}'")
+    @id = PermisoPernocta.next_id
+    @solicita = User.get_solicitante(current_user.id)
+    @VoBo = User.get_jefe_area(current_user.id)
+    @vehiculos = Vehiculo.get_area_vehiculos(current_user.id)
   end
 
   def create
-    PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id, :VoBo_id => User.find(Area.find(User.find(current_user).area_id).jefe_id).id))
+    PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id, :VoBo_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
   end
   def search

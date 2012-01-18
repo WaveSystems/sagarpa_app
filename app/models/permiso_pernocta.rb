@@ -8,4 +8,13 @@ class PermisoPernocta < ActiveRecord::Base
     self.tramito = 'Lic. Hector Hernandez Rolon' unless self.tramito
     self.autorizo = 'Dr. Salvador Becerra Rodriguez' unless self.autorizo
   end
+
+  # Get the last ID plus one from database
+  def self.next_id
+    if PermisoPernocta.last.id.nil?
+      return 1
+    else
+      return PermisoPernocta.last.id+1
+    end
+  end
 end
