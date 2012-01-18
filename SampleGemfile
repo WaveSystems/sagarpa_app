@@ -11,6 +11,7 @@ gem 'pg'
 gem 'haml'
 gem 'wicked_pdf'
 gem 'sqlite3'
+gem 'rails-backbone'
 
 
 # Gems used only for assets and not required
