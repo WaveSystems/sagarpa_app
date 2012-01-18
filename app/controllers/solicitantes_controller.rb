@@ -1,7 +1,9 @@
 class SolicitantesController < ApplicationController
   before_filter :authenticate_user!
+
   def menu
   end
+
   def new
     @permiso_pernocta = PermisoPernocta.new
     @id = PermisoPernocta.next_id
@@ -28,9 +30,12 @@ class SolicitantesController < ApplicationController
   #  PermisoPernocta.find(params[:id]).update_attributes(params[:permiso_pernocta])
   #  redirect_to menu_solicitante_path
   #end
+
+
   def show_history
     @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id)
   end
+
   def show_pdf
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     respond_to do |format|
