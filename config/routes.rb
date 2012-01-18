@@ -12,13 +12,13 @@ SagarpaApp::Application.routes.draw do
   match 'solicitante/new_permiso_pernocta' => 'solicitantes#new', :as => :new_pemiso
   match 'solicitante/create' => 'solicitantes#create'
 
-  match 'solicitante/:id/edit' => 'solicitantes#edit', :as => :edit_permiso
-  match 'solicitante/:id/update' => 'solicitantes#update'
+  #match 'solicitante/:id/edit' => 'solicitantes#edit', :as => :edit_permiso
+  #match 'solicitante/:id/update' => 'solicitantes#update'
+  #match 'solicitante/search' => 'solicitantes#search', :as => :search_permiso
+  #match 'solicitante/show' => 'solicitantes#show'
 
   match 'solicitante/history' => 'solicitantes#show_history', :as => :history_permiso
   match 'solicitante/:id/imprimir' => 'solicitantes#show_pdf', :as => :show_pdf
-  match 'solicitante/search' => 'solicitantes#search', :as => :search_permiso
-  match 'solicitante/show' => 'solicitantes#show'
 
   match 'acerca_de' => 'home#about', :as => :about_home
   match 'contacto' => 'home#contact', :as => :contact_home

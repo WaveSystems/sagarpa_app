@@ -14,23 +14,22 @@ class SolicitantesController < ApplicationController
     PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id, :VoBo_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
   end
-  def search
-  end
+  #def search
+  #end
   # Defining show whose will be called by ajax
-  def show
-    @permiso_pernocta = PermisoPernocta.find(params[:id])
-  end
-  def edit
-    @permiso_pernocta = PermisoPernocta.find(params[:id])
-    @id = PermisoPernocta.find(params[:id]).id
-  end
-  def update
-    PermisoPernocta.find(params[:id]).update_attributes(params[:permiso_pernocta])
-    redirect_to menu_solicitante_path
-  end
+  #def show
+  #  @permiso_pernocta = PermisoPernocta.find(params[:id])
+  #end
+  #def edit
+  #  @permiso_pernocta = PermisoPernocta.find(params[:id])
+  #  @id = PermisoPernocta.find(params[:id]).id
+  #end
+  #def update
+  #  PermisoPernocta.find(params[:id]).update_attributes(params[:permiso_pernocta])
+  #  redirect_to menu_solicitante_path
+  #end
   def show_history
-    @user = current_user.id
-    @permiso_pernocta = PermisoPernocta.where("solicita_id = '#{@user}'") 
+    @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id)
   end
   def show_pdf
     @permiso_pernocta = PermisoPernocta.find(params[:id])
