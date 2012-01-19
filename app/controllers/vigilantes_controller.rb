@@ -1,0 +1,2 @@
+class VigilantesController < ApplicationController
+end
