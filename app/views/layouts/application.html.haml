@@ -14,22 +14,22 @@
         #app_logo
       #navigation(align = "center") 
         #op1(align = "center")
-          = link_to image_tag("Iniciobotton.jpg"), root_path
+          = link_to image_tag("Iniciobutton.jpg"), root_path
         #op2(align = "center")
-          = link_to image_tag("Solicitantebotton.jpg"), menu_solicitante_path
+          = link_to image_tag("Solicitantebutton.jpg"), menu_solicitante_path
         #op3(align = "center")
-          = link_to image_tag("Vigilantebotton.jpg")
+          = link_to image_tag("Administradorbutton.jpg")
         #status1(align = "right")
           -if user_signed_in?
-            #status2(align = "center")
+            #status4(align = "center")
               = current_user.email 
             #status3
-              = link_to image_tag("Salirbotton.jpg"), destroy_user_session_path, :method => :delete
+              = link_to image_tag("Cerrarsesionbutton.jpg"), destroy_user_session_path, :method => :delete
           -else
             #status2(align = "center")
-              = link_to image_tag("Sesionbotton.jpg"), new_user_session_path
+              = link_to image_tag("Iniciarsesionbutton.jpg"), new_user_session_path
             #status3(align = "center")
-              = link_to image_tag("Registrarsebotton.jpg"), new_user_registration_path
+              = link_to image_tag("Registrarsebutton.jpg"), new_user_registration_path
       #section
         #article
           =yield

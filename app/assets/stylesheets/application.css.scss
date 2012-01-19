@@ -53,14 +53,20 @@ body{
 }
 #status2{
   float:left;
-  font-family: "Helvetica";
-  font-size:17px;
-  color:White;
-  width: 200px;
+  width:200px;
 }
 #status3{
   float: left;
   width: 220px;
+}
+#status4{
+  float:left;
+  font-family: "Helvetica";
+  font-size:17px;
+  color:White;
+  width: 200px;
+  position:relative;
+  top:9px;
 }
 #section{
   background-color:white;
