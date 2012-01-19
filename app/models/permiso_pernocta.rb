@@ -11,7 +11,7 @@ class PermisoPernocta < ActiveRecord::Base
 
   # Get the last ID plus one from database
   def self.next_id
-    if PermisoPernocta.last.id.nil?
+    if PermisoPernocta.last.nil?
       return 1
     else
       return PermisoPernocta.last.id+1
