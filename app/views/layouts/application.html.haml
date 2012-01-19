@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Control de parque vehicular SAGARPA
+    %title Control de parque vehicular
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -21,8 +21,10 @@
           = link_to image_tag("Vigilantebotton.jpg")
         #status1(align = "right")
           -if user_signed_in?
-            = current_user.email
-            = link_to image_tag("Salirbotton.jpg"), destroy_user_session_path, :method => :delete
+            #status2(align = "center")
+              = current_user.email 
+            #status3
+              = link_to image_tag("Salirbotton.jpg"), destroy_user_session_path, :method => :delete
           -else
             #status2(align = "center")
               = link_to image_tag("Sesionbotton.jpg"), new_user_session_path

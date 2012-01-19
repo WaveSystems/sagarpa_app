@@ -34,51 +34,39 @@ body{
   height:40px;
   width:$ancho + 60px;
   background-image:url(fondo_menu.jpg); 
-}	
+}
 #op1{
   float:left;
   width: 200px;
-  font-family: "Helvetica";
-  font-size: 17px;
 }	
 #op2{
   float:left;
   width: 200px;
-  font-family: "Helvetica";
-  font-size: 17px;
-  color:white;
 }
 #op3{
   float:left;
   width: 200px;
-  font-family: "Helvetica";
-  font-size: 17px;
- 	 color:white;
 }
 #status1{
   float:left;	
-  width: 400px;
-  font-family: "Helvetica";
-  font-size: 17px;
-  color:white;
+  width: 420px;
 }
 #status2{
   float:left;
-  width: 200px;
   font-family: "Helvetica";
-  font-size: 17px;
-  color:white;	
+  font-size:17px;
+  color:White;
+  width: 200px;
 }
 #status3{
   float: left;
-  width: 150px;
+  width: 220px;
 }
 #section{
   background-color:white;
   height:$altura * 0.8;
   width:$ancho + 60px;
 }
-
 #article{
   float:right;
   height:$altura * 0.8;
