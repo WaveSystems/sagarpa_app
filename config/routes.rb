@@ -23,6 +23,7 @@ SagarpaApp::Application.routes.draw do
   match 'acerca_de' => 'home#about', :as => :about_home
   match 'contacto' => 'home#contact', :as => :contact_home
 
+  get 'administrador' => 'administradores#menu', :as => :menu_administrador
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

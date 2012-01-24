@@ -1,0 +1,2 @@
+module VigilantesHelper
+end
