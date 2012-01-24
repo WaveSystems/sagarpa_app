@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118181557) do
+ActiveRecord::Schema.define(:version => 20120124003635) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20120118181557) do
   create_table "permiso_diarios", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "auto_id"
+    t.string   "justificacion"
+    t.string   "observaciones"
+    t.date     "fecha"
+    t.time     "hora_salida"
+    t.time     "hora_llegada"
+    t.integer  "solicita_id"
+    t.integer  "jefe_id"
+    t.integer  "autorizo_id"
   end
 
   create_table "permiso_pernocta", :force => true do |t|
