@@ -34,3 +34,10 @@
         #article
           =yield
       #footer
+        #foothome(align="center")
+          =link_to "Inicio", root_path
+        #footsolicitante(align="center")
+          =link_to "Solicitante", menu_solicitante_path
+        #footadministrador
+          =link_to "Administrador"
+  
