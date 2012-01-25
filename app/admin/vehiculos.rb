@@ -4,7 +4,7 @@ ActiveAdmin.register Vehiculo do
       f.input :numero, :label => "No."
       f.input :responsable_id, :label => "ID Responsable"
       f.input :area_id, :label => "ID area"
-      f.input :marca
+      f.input :brand
       f.input :tipo
       f.input :cilindros
       f.input :placa_actual
@@ -19,7 +19,7 @@ ActiveAdmin.register Vehiculo do
     f.column :numero, :label => "No."
     f.column :responsable_id, :label => "ID Responsable"
     f.column :area_id, :label => "ID area"
-    f.column :marca
+    f.column :brand
     f.column :tipo
     f.column :cilindros
     f.column :placa_actual
