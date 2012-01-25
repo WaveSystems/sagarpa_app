@@ -8,7 +8,10 @@
         %h2(align = "center") Seleccione una opcion:
     %tr
       %th
-        %h2(align = "center")= button_to 'Generar nuevo permiso', new_pemiso_path
+        %h2(align = "center")= button_to 'Generar nuevo permiso de no pernocta', new_pemiso_path
+    %tr
+      %th
+        %h2(align = "center")= button_to 'Generar nuevo permiso diario', new_pemiso_diario_path
     %tr
       %th
         %h2(align = "center")= button_to 'Ver historial de permisos', history_permiso_path

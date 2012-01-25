@@ -1,0 +1,62 @@
+= form_for @permiso_diario, :url => "create_permiso_diario" do |f|
+  #formpos
+    %table
+      %tr
+        %td(width="150")
+          %h4= f.label "Folio"
+        %td
+          = f.label "#{@id}"
+      %tr
+        %td
+          %h4= f.label :auto_id
+        %td
+          = f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
+      %tr
+        %td
+          %h4= f.label "Justificacion:"
+        %td
+          = f.radio_button :justificacion,"Estancia del vehiculo en el taller"
+          %b= f.label "Estancia del vehiculo en el taller"
+          %br
+          = f.radio_button :justificacion,"Comision local no mayor a tres dias segun oficion de comision anexo"
+          %b= f.label "Comision local no mayor a tres dias segun oficion de comision anexo"
+          %br
+          = f.radio_button :justificacion,"Comision foranea, segun oficio de comision anexo"
+          %b= f.label "Comision foranea, segun oficio de comision anexo"
+          %br
+          = f.radio_button :justificacion,"Otro"
+          %b= f.label "Otro (Especificado en las observaciones)"
+      %tr
+        %td
+          %h4= f.label :observaciones
+        %td
+          = f.text_field :observaciones
+      %tr
+        %td
+          %h4= f.label :fecha
+        %td
+          = f.date_select :fecha
+      %tr
+        %td
+          %h4= f.label :hora_salida
+        %td
+          = f.time_select :hora_salida
+      %tr
+        %td
+          %h4= f.label :hora_llegada
+        %td
+          = f.time_select :hora_llegada
+      %tr
+        %td
+          %h4= f.label "Solicita:"
+        %td
+          = f.label "#{@solicita}"
+      %tr
+        %td
+          %h4= f.label "Jefe de Área:"
+        %td
+          = f.label "#{@jefe_area}"
+      %tr
+        %td
+        %td
+          = f.submit "Crear permiso"
