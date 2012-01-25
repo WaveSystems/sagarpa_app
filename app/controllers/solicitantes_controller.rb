@@ -16,6 +16,7 @@ class SolicitantesController < ApplicationController
     PermisoPernocta.create(params[:permiso_pernocta].merge(:solicita_id => current_user.id, :VoBo_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
   end
+
   #def search
   #end
   # Defining show whose will be called by ajax
@@ -30,7 +31,6 @@ class SolicitantesController < ApplicationController
   #  PermisoPernocta.find(params[:id]).update_attributes(params[:permiso_pernocta])
   #  redirect_to menu_solicitante_path
   #end
-
 
   def show_history
     @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id)
@@ -55,7 +55,7 @@ class SolicitantesController < ApplicationController
   end
 
   def create_permiso_diario
-    PermisoDiario.create(params[:permiso_diario].merge(:solicita_id => current_user.id, :VoBo_id => User.get_jefe_id(current_user.id)))
+    PermisoDiario.create(params[:permiso_diario].merge(:solicita_id => current_user.id, :jefe_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
   end
 
