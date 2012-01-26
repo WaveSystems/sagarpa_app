@@ -38,6 +38,10 @@ class SolicitantesController < ApplicationController
 
   def show_pdf
     @permiso_pernocta = PermisoPernocta.find(params[:id])
+    #@permiso_diario = PermisoDiario.find(params[:id])
+    @solicita = User.find(@permiso_pernocta.solicita_id).nombre
+    @VoBo = User.find(@permiso_pernocta.VoBo_id).nombre
+    @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
     respond_to do |format|
       format.pdf do
         render :pdf => "Permiso_Pernocta#{:id}.pdf"
@@ -57,14 +61,5 @@ class SolicitantesController < ApplicationController
   def create_permiso_diario
     PermisoDiario.create(params[:permiso_diario].merge(:solicita_id => current_user.id, :jefe_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
-  end
-
-  def show_pdf_permiso_diario
-    @permiso_diario = PermisoDiario.find(params[:id])
-    respond_to do |format|
-      format.pdf do
-        render :pdf => "Permiso_diario#{:id}.pdf"
-      end
-    end
   end
 end

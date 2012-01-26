@@ -1,1 +1,57 @@
-%h1 PEEEEEDEEEEEEEEEEEEFFFFFFF!!!!!!
+%style 
+  p {
+  font-size:10px;
+  }
+  #pdf {
+  width:595.2756px;
+  height:841.8898px;
+  float:left;
+  }
+  #pdf-sello {
+  width:200px;
+  float:left;
+  }
+  #pdf-sello1 {
+  }
+  #pdf-sello2 {
+  }
+  #pdf-titulo {
+  width:300px;
+  float:left;
+  }
+
+#pdf
+  #pdf-sello
+    #pdf-sello1
+      %h3 Aquí va el sello!!
+    #pdf-sello2
+      %p Dr. Salvador Becerra Rodríguez
+      %p Delegado Federal de la SAGARPA en el
+      %p Estado de Colima
+      %p Presente
+  #pdf-titulo
+    %p OFICIO DE AUTORIZACIÓN PARA USO DE VEHÍCULO  
+    %p OFICIAL FUERA DE HORARIOS DE LABORES, FINES DE   
+    %p SEMANA Y DÍAS INHABILES
+
+  = @permiso_pernocta.id
+  %br
+  = @permiso_pernocta.justificacion
+  %br
+  = @permiso_pernocta.observaciones
+  %br
+  = @permiso_pernocta.domicilio_pernocta
+  %br
+  = @permiso_pernocta.tramito
+  %br
+  = @permiso_pernocta.autorizo
+  %br
+  = @solicita
+  %br
+  = @VoBo
+  %br
+  = @vehiculo.placa_actual
+  %br
+  = @vehiculo.brand
+  %br
+  = @vehiculo.year
