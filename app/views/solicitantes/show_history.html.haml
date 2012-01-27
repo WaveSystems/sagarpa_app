@@ -1,31 +1,10 @@
-%table
-  %tbody
-    %tr
-      %th ID
-      %th Auto
-      %th Justificacion
-      %th Observaciones
-      %th Fecha y hora de salida
-      %th Fecha y hora de llegada
-      %th Domicilio de pernocta
-      %th Numero de oficio
-      %th Solicita
-      %th VoBo
-      %th Tramito
-      %th Autorizo
-      %th Imprimir
-  - @permiso_pernocta.each do |permiso|
-    %tr
-      %td= permiso.id
-      %td= permiso.auto_id
-      %td= permiso.justificacion
-      %td= permiso.observaciones
-      %td= permiso.fecha_hora_salida
-      %td= permiso.fecha_hora_llegada
-      %td= permiso.domicilio_pernocta
-      %td= permiso.num_oficio
-      %td= permiso.solicita_id
-      %td= permiso.VoBo_id
-      %td= permiso.tramito
-      %td= permiso.autorizo
-      %td= link_to ".pdf", show_pdf_path(permiso, :format => :pdf)
+#show-history(align = "center")
+  %h3 Seleccione el tipo de permiso que desea ver
+  #show-history-1
+    = form_tag "/solicitante/show_permiso_diario", :remote => :true do 
+      = button_to "Mostrar permisos diarios"
+  #show-history-2
+    = form_tag "/solicitante/show_permiso_pernocta", :remote => :true do 
+      = button_to "Mostrar permisos de no pernocta"
+
+#mostrar_permisos

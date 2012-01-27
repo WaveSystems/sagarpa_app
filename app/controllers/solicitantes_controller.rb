@@ -17,23 +17,18 @@ class SolicitantesController < ApplicationController
     redirect_to menu_solicitante_path
   end
 
-  #def search
-  #end
-  # Defining show whose will be called by ajax
-  #def show
-  #  @permiso_pernocta = PermisoPernocta.find(params[:id])
-  #end
-  #def edit
-  #  @permiso_pernocta = PermisoPernocta.find(params[:id])
-  #  @id = PermisoPernocta.find(params[:id]).id
-  #end
-  #def update
-  #  PermisoPernocta.find(params[:id]).update_attributes(params[:permiso_pernocta])
-  #  redirect_to menu_solicitante_path
-  #end
+  # ======== Generic section =============================================== 
+  # Render permso diario from javascript ajax request
+  def show_permiso_diario
+    @permiso_diario = PermisoDiario.get_user_permiso_diario(current_user.id)
 
-  def show_history
+  end
+  # Render permso pernocta from javascript ajax request
+  def show_permiso_pernocta
     @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id)
+  end
+  # Show history main view
+  def show_history
   end
 
   def show_pdf
@@ -43,6 +38,7 @@ class SolicitantesController < ApplicationController
     @VoBo = User.find(@permiso_pernocta.VoBo_id).nombre
     @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
     respond_to do |format|
+      format.html
       format.pdf do
         render :pdf => "Permiso_Pernocta#{:id}.pdf"
       end

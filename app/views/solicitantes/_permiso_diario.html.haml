@@ -1,0 +1,29 @@
+%table
+  %tbody
+    %tr
+      %th ID
+      %th Auto
+      %th Justificacion
+      %th Observaciones
+      %th Fecha
+      %th hora de salida
+      %th hora de llegada
+      %th Solicita
+      %th Jefe
+      %th Autorizo
+      %th Imprimir
+      %th Imprimir
+  - @permiso_diario.each do |permiso|
+    %tr
+      %td= permiso.id
+      %td= permiso.auto_id
+      %td= permiso.justificacion
+      %td= permiso.observaciones
+      %td= permiso.fecha
+      %td= permiso.hora_salida
+      %td= permiso.hora_llegada
+      %td= permiso.solicita_id
+      %td= permiso.jefe_id
+      %td= permiso.autorizo_id
+      -#%td= link_to "PDF", show_pdf_path(permiso, :format => :pdf)
+      -#%td= link_to "HTML", show_pdf_path(permiso,:format => :html)
