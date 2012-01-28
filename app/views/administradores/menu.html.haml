@@ -1,1 +1,11 @@
-%h1= @Message
+%table
+  %tbody
+    %tr
+      %th
+        %h1(align = "center") Bienvenido
+    %tr
+      %th
+        %h2(align = "center") Seleccione una opcion:
+    %tr
+      %th
+        %h2(align = "center")= button_to 'Autorizar permisos', search_permiso_path

@@ -6,6 +6,8 @@ SagarpaApp::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'home#index'
+  match 'acerca_de' => 'home#about', :as => :about_home
+  match 'contacto' => 'home#contact', :as => :contact_home
 
   get 'solicitante' => 'solicitantes#menu', :as => :menu_solicitante                                                                             
 
@@ -15,9 +17,6 @@ SagarpaApp::Application.routes.draw do
   match 'solicitante/new_permiso_diario' => 'solicitantes#new_permiso_diario', :as => :new_pemiso_diario
   match 'solicitante/create_permiso_diario' => 'solicitantes#create_permiso_diario'
 
-  #match 'solicitante/:id/edit' => 'solicitantes#edit', :as => :edit_permiso
-  #match 'solicitante/:id/update' => 'solicitantes#update'
-  #match 'solicitante/search' => 'solicitantes#search', :as => :search_permiso
   match 'solicitante/show_permiso_diario' => 'solicitantes#show_permiso_diario'
   match 'solicitante/show_permiso_pernocta' => 'solicitantes#show_permiso_pernocta'
 
@@ -26,10 +25,10 @@ SagarpaApp::Application.routes.draw do
 
   match 'solicitante/:id/imprimir_permiso_diario' => 'solicitantes#show_pdf_permiso_diario', :as => :show_pdf_permiso_diario
 
-  match 'acerca_de' => 'home#about', :as => :about_home
-  match 'contacto' => 'home#contact', :as => :contact_home
 
   get 'administrador' => 'administradores#menu', :as => :menu_administrador
+  match 'administrador/search_permiso' => 'administradores#search_permiso', :as => :search_permiso
+  match 'administrador/show_permiso_pernocta' => 'administradores#show_permiso_pernocta', :as => :show_permiso_pernocta
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

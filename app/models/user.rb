@@ -21,12 +21,4 @@ class User < ActiveRecord::Base
   def self.get_jefe_id(id)
     return User.find(Area.find(User.find(id).area_id).jefe_id).id
   end
-  # Map the roles inside the TIPOS array
-  def tipos=(tipos)
-    self.tipo = (tipos & TIPOS).map { |r| 2**TIPOS.index(r) }.sum
-  end
-  # Check the user roles
-  def tipo?(tipo)
-    tipos.include? tipo.to_s
-  end
 end
