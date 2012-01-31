@@ -1,1 +1,39 @@
+%br
+%b Permiso de Pernocta No
 = @permiso_pernocta.id
+%br
+%b Id Vehiculo
+= @permiso_pernocta.auto_id
+%br
+%b Justificacion:
+= @permiso_pernocta.justificacion
+%br
+%b Observaciones:
+= @permiso_pernocta.observaciones
+%br
+%b Fecha y hora de salida:
+= @permiso_pernocta.fecha_hora_salida
+%br
+%b Fecha y hora de llegada:
+= @permiso_pernocta.fecha_hora_llegada
+%br
+%b Domicilio de pernocta:
+= @permiso_pernocta.domicilio_pernocta
+%br
+%b Solicita:
+= @permiso_pernocta.solicita_id
+%br
+%b VoBo:
+= @permiso_pernocta.VoBo_id
+%br
+%b Tramita:
+= @permiso_pernocta.tramito
+%br
+%b Autoriza:
+= @permiso_pernocta.autorizo
+%br
+%b Estado:
+= @permiso_pernocta.estado
+%br
+= button_to "Autorizar", autorizar_permiso_pernocta_path(@permiso_pernocta.id) 
+= button_to "Atras", menu_administrador_path 

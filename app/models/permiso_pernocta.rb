@@ -7,6 +7,11 @@ class PermisoPernocta < ActiveRecord::Base
   def default_values
     self.tramito = 'Lic. Hector Hernandez Rolon' unless self.tramito
     self.autorizo = 'Dr. Salvador Becerra Rodriguez' unless self.autorizo
+    if self.estado == nil
+      self.estado = 'No autorizado'
+    else
+      self.estado = 'Autorizado'
+    end
   end
 
   # Get the last ID plus one from database

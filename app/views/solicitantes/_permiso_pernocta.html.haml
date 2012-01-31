@@ -13,6 +13,7 @@
       %th VoBo
       %th Tramito
       %th Autorizo
+      %th Estado
       %th Imprimir
       %th Imprimir
   - @permiso_pernocta.each do |permiso|
@@ -29,5 +30,6 @@
       %td= permiso.VoBo_id
       %td= permiso.tramito
       %td= permiso.autorizo
+      %td= permiso.estado
       %td= link_to "PDF", show_pdf_path(permiso, :format => :pdf)
       %td= link_to "HTML", show_pdf_path(permiso,:format => :html)
