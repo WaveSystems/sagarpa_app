@@ -1,0 +1,33 @@
+%br
+%b Permiso de Diario No
+= @permiso_diario.id
+%br
+%b Id Vehiculo
+= @permiso_diario.auto_id
+%br
+%b Justificacion:
+= @permiso_diario.justificacion
+%br
+%b Observaciones:
+= @permiso_diario.observaciones
+%br
+%b Fecha y hora de salida:
+= @permiso_diario.fecha
+%br
+%b Hora de Salida:
+= @permiso_diario.hora_salida
+%br
+%b Hora de llegada:
+= @permiso_diario.hora_llegada
+%br
+%b Solicita:
+= @permiso_diario.solicita_id
+%br
+%b VoBo:
+= @permiso_diario.jefe_id
+%br
+%b Estado:
+= @permiso_diario.estado
+%br
+= button_to "Autorizar", autorizar_permiso_diario_path(@permiso_diario.id) 
+= button_to "Atras", menu_administrador_path 
