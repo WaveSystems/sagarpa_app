@@ -33,12 +33,20 @@ class AdministradoresController < ApplicationController
     @permiso_diario.update_attributes(params[:permiso_diario])
     redirect_to "/administrador"
   end
+
+  def reportes
+    if User.authorize_administrator(current_user.tipo)
+      flash[:alert]="Area de reportes"
+    else
+      flash[:alert]="Usuario no administrador"
+      redirect_to "/administrador"
+    end
+  end
  
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
-
   def authorize_user!
-    if current_user.tipo == "administrador"
+    if current_user.tipo == "administrador" || current_user.tipo == "asistente"
       flash[:alert]="Bienvenido Administrador"
     else
       flash[:alert]="Usuario no administrador"

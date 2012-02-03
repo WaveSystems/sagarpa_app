@@ -37,6 +37,8 @@ SagarpaApp::Application.routes.draw do
   match 'administrador/:id/autorizar_permiso_diario' => 'administradores#autorizar_permiso_diario!', :as => :autorizar_permiso_diario
   match 'administrador/search_permiso_diario' => 'administradores#search_permiso_diario', :as => :search_permiso_diario
 
+  match 'administrador/reportes' => 'administradores#reportes', :as => :reportes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
