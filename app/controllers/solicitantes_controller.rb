@@ -58,4 +58,13 @@ class SolicitantesController < ApplicationController
     PermisoDiario.create(params[:permiso_diario].merge(:solicita_id => current_user.id, :jefe_id => User.get_jefe_id(current_user.id)))
     redirect_to menu_solicitante_path
   end
+  ## ================== Passwords stuff =======================================
+  def change_password
+    @user = User.find(current_user.id)
+  end
+  def update_password
+    User.update_attributes(params[:user])
+    flash[:alert]="Cambios guardados exitosamente"
+    redirect_to "/solicitante"
+  end
 end
