@@ -25,6 +25,9 @@ SagarpaApp::Application.routes.draw do
 
   match 'solicitante/:id/imprimir_permiso_diario' => 'solicitantes#show_pdf_permiso_diario', :as => :show_pdf_permiso_diario
 
+  match 'solicitante/:id/change_password' => 'solicitantes#change_password', :as => :change_password
+  match 'solicitante/:id/update_password' => 'solicitantes#update_password', :as => :update_password
+
 
   get 'administrador' => 'administradores#menu', :as => :menu_administrador
   match 'administrador/search_permiso' => 'administradores#search_permiso', :as => :search_permiso

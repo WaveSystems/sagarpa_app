@@ -3,6 +3,7 @@ class SolicitantesController < ApplicationController
 
   def menu
   end
+
   ## ========= Permiso de pernocta section ============================ 
   def new
     @permiso_pernocta = PermisoPernocta.new
@@ -23,11 +24,11 @@ class SolicitantesController < ApplicationController
     @permiso_diario = PermisoDiario.get_user_permiso_diario(current_user.id)
 
   end
-  # Render permso pernocta from javascript ajax request
+
   def show_permiso_pernocta
     @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id)
   end
-  # Show history main view
+
   def show_history
   end
 
@@ -60,10 +61,12 @@ class SolicitantesController < ApplicationController
   end
   ## ================== Passwords stuff =======================================
   def change_password
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
   end
+
   def update_password
-    User.update_attributes(params[:user])
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
     flash[:alert]="Cambios guardados exitosamente"
     redirect_to "/solicitante"
   end

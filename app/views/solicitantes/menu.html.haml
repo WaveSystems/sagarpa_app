@@ -17,4 +17,4 @@
         %h2(align = "center")= button_to 'Ver historial de permisos', history_permiso_path
     %tr
       %th
-        %h2(align = "center")= button_to 'Cambiar contraseña'
+        %h2(align = "center")= button_to 'Cambiar contraseña', change_password_path(current_user.id)
