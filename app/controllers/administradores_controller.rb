@@ -22,6 +22,14 @@ class AdministradoresController < ApplicationController
     @permiso_diario = PermisoDiario.find(params[:id])
   end
 
+  def show_reporte_pernocta
+    @permiso_pernocta = PermisoPernocta.all
+  end
+
+  def show_reporte_permiso_diario
+    @permiso_diario = PermisoDiario.all
+  end
+
   def autorizar_permiso_pernocta!
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     @permiso_pernocta.update_attributes(params[:permiso_pernocta])
@@ -30,7 +38,7 @@ class AdministradoresController < ApplicationController
 
   def autorizar_permiso_diario!
     @permiso_diario = PermisoDiario.find(params[:id])
-    @permiso_diario.update_attributes(params[:permiso_diario])
+    @permiso_diario.update_attributes(params[:permiso_diario].merge(:autorizo => current_user.nombre))
     redirect_to "/administrador"
   end
 

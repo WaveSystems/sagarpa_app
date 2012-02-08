@@ -11,6 +11,7 @@ class PermisoDiario < ActiveRecord::Base
       self.estado = 'Autorizado'
     end
   end
+
   # The same behavior of permiso pernocta model
   def self.next_id
     if PermisoDiario.last.nil?
