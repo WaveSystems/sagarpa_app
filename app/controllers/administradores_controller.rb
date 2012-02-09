@@ -22,14 +22,6 @@ class AdministradoresController < ApplicationController
     @permiso_diario = PermisoDiario.find(params[:id])
   end
 
-  def show_reporte_pernocta
-    @permiso_pernocta = PermisoPernocta.all
-  end
-
-  def show_reporte_permiso_diario
-    @permiso_diario = PermisoDiario.all
-  end
-
   def autorizar_permiso_pernocta!
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     @permiso_pernocta.update_attributes(params[:permiso_pernocta])
@@ -50,7 +42,21 @@ class AdministradoresController < ApplicationController
       redirect_to "/administrador"
     end
   end
- 
+
+  def sort_reporte_pernocta
+  end
+
+  def sort_reporte_permiso_diario
+  end
+
+  def show_reporte_pernocta
+    @permiso_pernocta = PermisoPernocta.all
+  end
+
+  def show_reporte_permiso_diario
+    @permiso_diario = PermisoDiario.all
+  end
+
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
   def authorize_user!

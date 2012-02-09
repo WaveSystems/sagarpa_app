@@ -1,0 +1,19 @@
+= form_tag :show_reporte_permiso_diario, :remote => true do
+  %br
+  = label_tag "Desde:"
+  = text_field_tag :inicio
+  %br
+  = label_tag "Hasta:"
+  = text_field_tag :fin
+  %br
+  = label_tag "Area:"
+  = text_field_tag :area
+  %br
+  = label_tag "Empleado:"
+  = text_field_tag :empleado
+  %br
+  = button_to "Generar"
+
+%br
+%br
+#show-reporte
