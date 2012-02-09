@@ -23,6 +23,6 @@ class PermisoDiario < ActiveRecord::Base
 
   # Get all the permisos of each user
   def self.get_user_permiso_diario(id)
-    return PermisoDiario.where("solicita_id = '#{id}'")
+    return PermisoDiario.where("solicita_id = '#{id}'").order("id desc")
   end
 end
