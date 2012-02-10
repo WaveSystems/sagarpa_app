@@ -1,6 +1,18 @@
-= form_tag "/administrador/show_permiso_pernocta", :remote => :true do
-  = label_tag "Ingrese numero de folio"
-  = text_field_tag :id
-  = button_to "Buscar"
+#show-history(align = "center")
+  %h3 Autorizar:
+  #show-history-1
+    = form_tag "/administrador/search_permiso_diario", :remote => :true do 
+      = button_to "Permiso diario"
+  #show-history-2
+    = form_tag "/administrador/search_permiso_pernocta", :remote => :true do 
+      = button_to "Permiso de no pernocta"
+
+%br
+%br
+
+#search_permisos
+
+%br
+%br
 
 #mostrar_permiso

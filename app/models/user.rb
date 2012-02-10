@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  TIPOS = %w[normal administrador]
+  TIPOS = %w[normal asistente administrador]
   AUTORIZADO = %w[Si No]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -20,5 +20,14 @@ class User < ActiveRecord::Base
   # Get the current boss id
   def self.get_jefe_id(id)
     return User.find(Area.find(User.find(id).area_id).jefe_id).id
+  end
+
+  #Get the authorization for middle level users
+  def self.authorize_administrator(type)
+    if type == "administrador"
+      true
+    else
+      false
+    end
   end
 end

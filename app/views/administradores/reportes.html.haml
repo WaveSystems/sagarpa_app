@@ -1,0 +1,11 @@
+#show-history(align = "center")
+  %h3 Seleccione el tipo de permiso para el que quiere generar el reporte
+  #show-history-1
+    = form_tag "/administrador/reportes/sort/permiso_diario", :remote => :true do 
+      = button_to "Mostrar permisos diarios"
+  #show-history-2
+    = form_tag "/administrador/reportes/sort/pernocta", :remote => :true do 
+      = button_to "Mostrar permisos de no pernocta"
+%br
+%br
+#mostrar_permisos(align = "center")

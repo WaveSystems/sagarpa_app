@@ -8,13 +8,12 @@
       %th Fecha y hora de salida
       %th Fecha y hora de llegada
       %th Domicilio de pernocta
-      %th #
+      %th Numero de oficio
+      %th Solicita
       %th VoBo
       %th Tramito
       %th Autorizo
       %th Estado
-      %th Imprimir
-      %th Imprimir
   - @permiso_pernocta.each do |permiso|
     %tr
       %td= permiso.id
@@ -25,9 +24,8 @@
       %td= permiso.fecha_hora_llegada
       %td= permiso.domicilio_pernocta
       %td= permiso.num_oficio
+      %td= permiso.solicita_id
       %td= permiso.VoBo_id
       %td= permiso.tramito
       %td= permiso.autorizo
       %td= permiso.estado
-      %td= link_to "PDF", show_pdf_path(permiso, :format => :pdf)
-      %td= link_to "HTML", show_pdf_path(permiso,:format => :html)

@@ -24,6 +24,6 @@ class PermisoPernocta < ActiveRecord::Base
   end
   # Get all the permisos of each user
   def self.get_user_permiso_pernocta(id)
-    return PermisoPernocta.where("solicita_id = '#{id}'")
+    return PermisoPernocta.where("solicita_id = '#{id}'").order("id desc")
   end
 end
