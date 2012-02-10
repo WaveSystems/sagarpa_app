@@ -3,6 +3,7 @@ class PermisoDiario < ActiveRecord::Base
   before_save :default_values
 
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha, :hora_salida, :hora_llegada, :solicita_id, :jefe_id
+
   # Check and add the default values
   def default_values
     if self.estado == nil

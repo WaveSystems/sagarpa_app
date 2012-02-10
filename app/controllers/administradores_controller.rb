@@ -30,7 +30,7 @@ class AdministradoresController < ApplicationController
 
   def autorizar_permiso_diario!
     @permiso_diario = PermisoDiario.find(params[:id])
-    @permiso_diario.update_attributes(params[:permiso_diario].merge(:autorizo => current_user.nombre))
+    @permiso_diario.update_attributes(params[:permiso_diario])
     redirect_to "/administrador"
   end
 
