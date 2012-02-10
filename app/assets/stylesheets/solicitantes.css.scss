@@ -1,9 +1,20 @@
 // Place all the styles related to the solicitantes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#vistahtml{
+  width:801px;
+  height:850px;
+  border-style:solid;
+  border-width:1px;
+}
 #formpos{
   position:relative;
   left:15px;
+}
+
+#formpos-html{
+  position:relative;
+  left:100px;
 }
 
 #show-history-1{
@@ -14,4 +25,119 @@
 #show-history-2{
   float:left;
   width:480px;
+}
+
+#pdf-sello{
+  width:400px;
+  height:150px;
+  float:right;
+}
+#pdf-titulo{
+  width:400px;
+  height:150;
+  position:relative;
+  right:30px;
+}
+
+#pdf-logo{
+  width:400px;
+  height:150px;
+  float:left;
+}
+
+#pdf-sello1{
+  width:400px;
+  height:50px;
+}
+
+#pdf-sello2{
+  width:400px;
+  height:75px;
+}
+
+#pdf-titular{
+  width:800px;
+  height:100px;
+  float:left;
+}
+#pdf-idpernocta{
+  width:400px;
+  height:100px;
+  float:right;
+}
+
+#pdf-sello3{
+  width:400px;
+  height:100px;
+  float:left;
+  position:relative;
+  left:30px;
+}
+
+#pdf-fecha{
+  width:800px;
+  height:14px;
+  position:relative;
+  right:30px;
+  float:left;
+}
+
+#pdf-texto{
+  width:750px;
+  height:320px;
+  position:relative;
+  left:30px;
+}
+
+#pdf-tabla1{
+  width:750px;
+  height:100px;
+  position:relative;
+  left:30px;
+  float:left;
+}
+
+#pdf-tabla2{
+  width:750px;
+  height:100px;
+  position:relative;
+  left:30px;
+  float:left;
+}
+
+#pdf-tabla3{
+  width:750px;
+  height:50px;
+  position:relative;
+  left:30px;
+  float:left;
+}
+
+#pdf-firma2{
+  width:400px;
+  height:150px;
+  float:right;
+}
+
+#pdf-firma1{
+  width:400px;
+  height:150px;
+  float:left;
+}
+
+#pdf-firma4{
+  width:400px;
+  height:150px;
+  float:right;
+}
+
+#pdf-firma3{
+  width:400px;
+  height:150px;
+  float:left;
+}
+
+#pdf-resto{
+  width:800px;
+  height:400px;
 }

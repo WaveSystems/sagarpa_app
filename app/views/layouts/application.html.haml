@@ -28,8 +28,8 @@
           -else
             #status2(align = "center")
               = link_to image_tag("Iniciarsesionbutton.jpg"), new_user_session_path
-            #status3(align = "center")
-              = link_to image_tag("Registrarsebutton.jpg"), new_user_registration_path
+            -##status3(align = "center")
+              -#= link_to image_tag("Registrarsebutton.jpg"), new_user_registration_path
       #section
         #article
           =yield

@@ -1,57 +1,99 @@
-%style 
-  p {
-  font-size:10px;
-  }
-  #pdf {
-  width:595.2756px;
-  height:841.8898px;
-  float:left;
-  }
-  #pdf-sello {
-  width:200px;
-  float:left;
-  }
-  #pdf-sello1 {
-  }
-  #pdf-sello2 {
-  }
-  #pdf-titulo {
-  width:300px;
-  float:left;
-  }
-  
-#pdf
-  #pdf-sello
-    #pdf-sello1
-      %h3 Aquí va el sello!!
-    #pdf-sello2
-      %p Dr. Salvador Becerra Rodríguez
-      %p Delegado Federal de la SAGARPA en el
-      %p Estado de Colima
-      %p Presente
-  #pdf-titulo
-    %p OFICIO DE AUTORIZACIÓN PARA USO DE VEHÍCULO  
-    %p OFICIAL FUERA DE HORARIOS DE LABORES, FINES DE   
-    %p SEMANA Y DÍAS INHABILES
-
-  = @permiso_pernocta.id
-  %br
-  = @permiso_pernocta.justificacion
-  %br
-  = @permiso_pernocta.observaciones
-  %br
-  = @permiso_pernocta.domicilio_pernocta
-  %br
-  = @permiso_pernocta.tramito
-  %br
-  = @permiso_pernocta.autorizo
-  %br
-  = @solicita
-  %br
-  = @VoBo
-  %br
-  = @vehiculo.placa_actual
-  %br
-  = @vehiculo.brand
-  %br
-  = @vehiculo.year
+#formpos-html 
+  #vistahtml
+    #pdf-sello
+      #pdf-titulo(align="right")
+        %br
+        %h6 OFICIO DE AUTORIZACIÓN PARA USO DE VEHÍCULO  
+        %h6 OFICIAL FUERA DE HORARIOS DE LABORES, FINES DE   
+        %h6 SEMANA Y DÍAS INHABILES
+        %br
+    #pdf-logo
+      #pdf-sello1(align="center")
+        %br
+        = image_tag("Logo.jpg")
+      #pdf-sello2(align="center")
+        %br
+        %br
+        %br
+        %h6 Secretaría de Agricultura
+        %h6 Ganadería, Desarrollo Rural, Pesca Y
+        %h6 Alimentación
+        %br
+    #pdf-titular
+      #pdf-idpernocta(align="center")
+        %h6 Número de Folio:
+        = @permiso_pernocta.id
+      #pdf-sello3(align="left")
+        %br
+        %h6 Dr. Salvador Becerra Rodríguez
+        %h6 Delegado Federal de la SAGARPA en el
+        %h6 Estado de Colima
+        %h6 Presente
+        %br
+    #pdf-fecha(align="right")
+      %h6 Colima, Col. a = @permiso_pernocta.fecha_hora_salida
+      %br
+    #pdf-texto(align="left")
+      %br
+      %p De conformidad con el numeral 2.15.3 Asignación de vehículos, de la Circular 01-2008 emitida por la Oficialía Mayor de la SAGARPA, mediante  el cual se establecen los lineamientos de transportación y las medidas de austeridad y discipliina para el uso del parque vehicular de la Delegación, solicito autorización para que el siguiente vehículo no pernocte en las instalaciones de la Delegación bajo los siguientes términos:
+      %br
+    #pdf-tabla1
+      %table.index_table
+        %thead
+          %tr
+            %th Vehículo Placas:
+            %th Marca:
+            %th Modelo:
+        %tbody
+          %tr
+            %td
+              = @vehiculo.placa_actual
+            %td
+              = @vehiculo.brand
+            %td
+              = @vehiculo.year
+    #pdf-tabla2
+      %table.index_table
+        %thead
+          %tr
+            %th Justificación:
+            %th Observaciones:
+            %th Fecha(s) requerida(s):
+        %tbody
+          %td
+            = @permiso_pernocta.justificacion
+          %td
+            = @permiso_pernocta.observaciones
+          %td
+            = @permiso_pernocta.fecha_hora_salida
+            %h6 al
+            = @permiso_pernocta.fecha_hora_llegada
+    #pdf-tabla3
+      %table.index_table
+        %thead
+        %tr
+          %th Domicilio de pernocta:
+          %td= @permiso_pernocta.domicilio_pernocta
+    #pdf-firma2
+      
+    #pdf-firma1
+    #pdf-firma4
+    #pdf.firma3
+      /#pdf-resto(align="center")
+      /= @permiso_pernocta.justificacion
+      /%br
+      /= @permiso_pernocta.observaciones
+      /%br
+      /= @permiso_pernocta.tramito
+      /%br
+      /= @permiso_pernocta.autorizo
+      /%br
+      /= @solicita
+      /%br
+      /= @VoBo
+      /%br
+      /= @vehiculo.placa_actual
+      /%br
+      /= @vehiculo.brand
+      /%br
+      /= @vehiculo.year
