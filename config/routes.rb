@@ -47,4 +47,6 @@ SagarpaApp::Application.routes.draw do
 
   match 'administrador/reportes/pernocta' => 'administradores#show_reporte_pernocta', :as => :show_reporte_pernocta
   match 'administrador/reportes/permiso_diario' => 'administradores#show_reporte_permiso_diario', :as => :show_reporte_permiso_diario
+
+  get 'vigilante' => 'vigilantes#index', :as => :index_vigilante
 end
