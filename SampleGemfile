@@ -12,7 +12,7 @@ gem 'haml'
 gem 'wicked_pdf'
 gem 'sqlite3'
 gem 'rails-backbone'
-gem 'declarative_authorization'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
