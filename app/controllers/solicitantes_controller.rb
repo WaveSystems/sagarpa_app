@@ -21,11 +21,11 @@ class SolicitantesController < ApplicationController
   # ======== Generic section =============================================== 
   # Render permso diario from javascript ajax request
   def show_permiso_diario
-    @permiso_diario = PermisoDiario.get_user_permiso_diario(current_user.id).page(params[:page]).per(5)
+    @permiso_diario = PermisoDiario.get_user_permiso_diario(current_user.id).page(params[:page]).per(7)
   end
 
   def show_permiso_pernocta
-    @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id).page(params[:page]).per(10)
+    @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id).page(params[:page]).per(7)
   end
 
   def show_pdf
