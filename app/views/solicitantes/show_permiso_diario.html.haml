@@ -14,7 +14,6 @@
       %th Autorizo
       %th Estado
       %th Imprimir
-      %th Imprimir
   - @permiso_diario.each do |permiso|
     %tr
       %td= permiso.id
@@ -28,5 +27,4 @@
       %td= permiso.jefe_id
       %td= permiso.autorizo
       %td= permiso.estado
-      %td= #link_to "PDF", show_pdf_path(permiso, :format => :pdf)
       %td= #link_to "HTML", show_pdf_path(permiso,:format => :html)
