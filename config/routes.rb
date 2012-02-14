@@ -17,8 +17,8 @@ SagarpaApp::Application.routes.draw do
   match 'solicitante/new_permiso_diario' => 'solicitantes#new_permiso_diario', :as => :new_pemiso_diario
   match 'solicitante/create_permiso_diario' => 'solicitantes#create_permiso_diario'
 
-  match 'solicitante/show_permiso_diario' => 'solicitantes#show_permiso_diario'
-  match 'solicitante/show_permiso_pernocta' => 'solicitantes#show_permiso_pernocta'
+  match 'solicitante/show_permiso_diario' => 'solicitantes#show_permiso_diario', :as => :show_history_permiso_diario
+  match 'solicitante/show_permiso_pernocta' => 'solicitantes#show_permiso_pernocta', :as => :show_history_permiso_pernocta
 
   match 'solicitante/history' => 'solicitantes#show_history', :as => :history_permiso
   match 'solicitante/:id/imprimir' => 'solicitantes#show_pdf', :as => :show_pdf
