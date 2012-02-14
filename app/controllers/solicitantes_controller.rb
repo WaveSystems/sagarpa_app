@@ -34,12 +34,6 @@ class SolicitantesController < ApplicationController
     @solicita = User.find(@permiso_pernocta.solicita_id).nombre
     @VoBo = User.find(@permiso_pernocta.VoBo_id).nombre
     @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render :pdf => "Permiso_Pernocta#{:id}.pdf"
-      end
-    end
   end
 
   ## ================== Permiso diario section =================================
