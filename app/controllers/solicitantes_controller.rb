@@ -28,9 +28,6 @@ class SolicitantesController < ApplicationController
     @permiso_pernocta = PermisoPernocta.get_user_permiso_pernocta(current_user.id).page(params[:page]).per(5)
   end
 
-  def show_history
-  end
-
   def show_pdf
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     #@permiso_diario = PermisoDiario.find(params[:id])
