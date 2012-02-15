@@ -34,10 +34,12 @@ SagarpaApp::Application.routes.draw do
 
   match 'administrador/show_permiso_pernocta' => 'administradores#show_permiso_pernocta', :as => :show_permiso_pernocta
   match 'administrador/:id/autorizar_permiso_pernocta' => 'administradores#autorizar_permiso_pernocta!', :as => :autorizar_permiso_pernocta
+  match 'administrador/:id/rechazar_permiso_pernocta' => 'administradores#rechazar_permiso_pernocta!', :as => :rechazar_permiso_pernocta
   match 'administrador/search_permiso_pernocta' => 'administradores#search_permiso_pernocta', :as => :search_permiso_pernocta
 
   match 'administrador/show_permiso_diario' => 'administradores#show_permiso_diario', :as => :show_permiso_diario
   match 'administrador/:id/autorizar_permiso_diario' => 'administradores#autorizar_permiso_diario!', :as => :autorizar_permiso_diario
+  match 'administrador/:id/rechazar_permiso_diario' => 'administradores#rechazar_permiso_diario!', :as => :rechazar_permiso_diario
   match 'administrador/search_permiso_diario' => 'administradores#search_permiso_diario', :as => :search_permiso_diario
 
   match 'administrador/reportes' => 'administradores#reportes', :as => :reportes

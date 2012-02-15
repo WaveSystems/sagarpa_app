@@ -35,6 +35,21 @@ class AdministradoresController < ApplicationController
     redirect_to "/administrador"
   end
 
+  def rechazar_permiso_pernocta!
+    @permiso_pernocta = PermisoPernocta.find(params[:id])
+    @permiso_pernocta.estado = "Rechazado"
+    @permiso_pernocta.save
+    redirect_to "/administrador"
+  end
+
+  def rechazar_permiso_diario!
+    @permiso_diario = PermisoDiario.find(params[:id])
+    @permiso_diario.estado = "Rechazado"
+    @permiso_diario.autorizo = current_user.nombre
+    @permiso_diario.save
+    redirect_to "/administrador"
+  end
+
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
   def authorize_user!

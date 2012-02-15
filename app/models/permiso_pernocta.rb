@@ -8,8 +8,11 @@ class PermisoPernocta < ActiveRecord::Base
   def default_values
     self.tramito = 'Lic. Hector Hernandez Rolon' unless self.tramito
     self.autorizo = 'Dr. Salvador Becerra Rodriguez' unless self.autorizo
+
     if self.estado == nil
       self.estado = 'No autorizado'
+    elsif self.estado == 'Rechazado'
+      self.estado = 'Rechazado'
     else
       self.estado = 'Autorizado'
     end

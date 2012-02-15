@@ -8,6 +8,8 @@ class PermisoDiario < ActiveRecord::Base
   def default_values
     if self.estado == nil
       self.estado = 'No autorizado'
+    elsif self.estado == 'Rechazado'
+      self.estado = 'Rechazado'
     else
       self.estado = 'Autorizado'
     end
