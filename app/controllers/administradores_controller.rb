@@ -24,14 +24,32 @@ class AdministradoresController < ApplicationController
 
   def autorizar_permiso_pernocta!
     @permiso_pernocta = PermisoPernocta.find(params[:id])
-    @permiso_pernocta.update_attributes(params[:permiso_pernocta])
+    @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
+
+    if @vehiculo.estado == "Disponoble" && @permiso_pernocta.estado = "No autorizado"
+      @vehiculo.estado = "Ocupado"
+      @vehiculo.save
+      @permiso_pernocta.update_attributes(params[:permiso_pernocta])
+    else
+      flash[:alert]="Automovil no disponible"
+    end
+
     redirect_to "/administrador"
   end
 
   def autorizar_permiso_diario!
     @permiso_diario = PermisoDiario.find(params[:id])
-    @permiso_diario.autorizo = current_user.nombre
-    @permiso_diario.save
+    @vehiculo = Vehiculo.find(@permiso_diario.auto_id)
+
+    if @vehiculo.estado == "Disponible" && @permiso_diario.estado = "No autorizado"
+      @vehiculo.estado = "Ocupado"
+      @vehiculo.save
+      @permiso_diario.autorizo = current_user.nombre
+      @permiso_diario.save
+    else
+      flash[:alert]="Automovil no disponible"
+    end
+
     redirect_to "/administrador"
   end
 
@@ -53,9 +71,7 @@ class AdministradoresController < ApplicationController
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
   def authorize_user!
-    if current_user.tipo == "administrador" || current_user.tipo == "asistente"
-      flash[:alert]="Bienvenido Administrador"
-    else
+    unless current_user.tipo == "administrador" || current_user.tipo == "asistente"
       flash[:alert]="Usuario no administrador"
       redirect_to :root
     end

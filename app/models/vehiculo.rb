@@ -5,10 +5,11 @@ class Vehiculo < ActiveRecord::Base
 
   # Get the area vehicles
   def self.get_area_vehiculos(id)
-    return Vehiculo.where("area_id = '#{Area.find(User.find(id).area_id).id}'")
+    return Vehiculo.where("area_id = '#{Area.find(User.find(id).area_id).id}' and estado = 'Disponible'")
   end
+
   def set_available
-    self.estado = "Disponible"
+    self.estado = "Disponible" unless self.estado == "Ocupado"
   end
 
 end
