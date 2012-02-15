@@ -22,8 +22,7 @@ SagarpaApp::Application.routes.draw do
 
   match 'solicitante/history' => 'solicitantes#show_history', :as => :history_permiso
   match 'solicitante/:id/imprimir' => 'solicitantes#show_pdf', :as => :show_pdf
-
-  match 'solicitante/:id/imprimir_permiso_diario' => 'solicitantes#show_pdf_permiso_diario', :as => :show_pdf_permiso_diario
+  match 'solicitante/:id/imprimir_diario' => 'solicitantes#show_pdf_diario', :as => :show_pdf_diario
 
   match 'solicitante/:id/change_password' => 'solicitantes#change_password', :as => :change_password
   match 'solicitante/:id/update_password' => 'solicitantes#update_password', :as => :update_password
