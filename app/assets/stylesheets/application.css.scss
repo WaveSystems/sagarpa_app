@@ -65,7 +65,7 @@ body{
 #status4{
   float:left;
   font-family: "Helvetica";
-  font-size:17px;
+  font-size:15px;
   color:White;
   width: 200px;
   position:relative;
@@ -90,22 +90,31 @@ body{
 #foothome{
   float:left;
   font-family: "Helvetica";
-  background-color:white;
   font-size:17px;
-  color:White;
+  text:white;
   width:200px;
 }
 #footsolicitante{
   float:left;
   font-family: "Helvetica";
-  background-color:white;
   font-size:17px;
   width:200px;
 }
 #footadministrador{
   float:left;
   font-family: "Helvetica";
-  background-color:white;
   font-size:17px;
   width:200px;
+}
+#footabout{
+  float:left;
+  font-family: "Helvetica";
+  font-size:17px;
+  width:200px;
+}
+#footcontact{
+  float:left;
+  font-family: "Helvetica";
+  font-size:17px;
+  width:160px;
 }
