@@ -26,6 +26,7 @@ ActiveAdmin.register Vehiculo do
     f.column :year, :label => "Modelo"
     f.column :color
     f.column :identificacion, :label => "No Idenfificacion"
+    f.column :estado
     default_actions
   end
 

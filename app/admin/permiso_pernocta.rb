@@ -29,6 +29,7 @@ ActiveAdmin.register PermisoPernocta do
     f.column :VoBo_id
     f.column :tramito
     f.column :autorizo
+    f.column :estado
     default_actions
   end
 end
