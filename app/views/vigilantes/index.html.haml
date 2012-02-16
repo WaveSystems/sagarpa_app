@@ -1,1 +1,44 @@
-%h1 indexveda!
+%br
+%br
+%table.index_table
+  %tbody
+    %tr
+      %th Numero
+      %th Placas
+      %th Area
+      %th Marca
+      %th Modelo
+      %th Color
+      %th Estado
+      %th Terminar
+  - @vehiculo_ocupado.each do |vehiculo|
+    %tr
+      %td= vehiculo.id
+      %td= vehiculo.placa_actual
+      %td= vehiculo.area_id
+      %td= vehiculo.brand
+      %td= vehiculo.tipo
+      %td= vehiculo.color
+      %td= vehiculo.estado
+      %td= button_to "Terminar Permiso", finish_vigilante_path(vehiculo.id)
+%br
+%br
+%table.index_table
+  %tbody
+    %tr
+      %th Numero
+      %th Placas
+      %th Area
+      %th Marca
+      %th Modelo
+      %th Color
+      %th Estado
+  - @vehiculo_disponible.each do |vehiculo|
+    %tr
+      %td= vehiculo.id
+      %td= vehiculo.placa_actual
+      %td= vehiculo.area_id
+      %td= vehiculo.brand
+      %td= vehiculo.tipo
+      %td= vehiculo.color
+      %td= vehiculo.estado
