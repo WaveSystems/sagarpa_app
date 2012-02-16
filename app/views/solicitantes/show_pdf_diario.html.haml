@@ -20,7 +20,7 @@
         %h6 Alimentación
         %br
     #pdf-titular
-      #pdf-iddiario(align="center")
+      #pdf-idpernocta(align="center")
         %h6 Número de Folio:
         = @permiso_diario.id
       #pdf-sello3(align="left")
@@ -31,7 +31,7 @@
         %h6 Presente
         %br
     #pdf-fecha(align="right")
-      %h6 Colima, Col. a = @permiso_diario.fecha_hora_salida
+      %h6 Colima, Col. a = @permiso.fecha
       %br
     #pdf-texto(align="left")
       %br
