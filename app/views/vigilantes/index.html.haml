@@ -1,1 +1,5 @@
-%h1 indexveda!
+#refresh_tables(align = "center")
+  = form_tag "/vigilante/tables", :remote => :true do
+    %h3= button_to "Actualizar", tables_vigilante_path
+
+#tables
