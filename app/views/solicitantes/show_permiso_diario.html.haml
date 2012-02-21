@@ -23,8 +23,8 @@
       %td= permiso.justificacion
       %td= permiso.observaciones
       %td= permiso.fecha
-      %td= permiso.hora_salida
-      %td= permiso.hora_llegada
+      %td= "#{permiso.hora_salida.hour}:#{permiso.hora_salida.min}"
+      %td= "#{permiso.hora_llegada.hour}:#{permiso.hora_llegada.min}"
       %td= @solicita
       %td= User.get_jefe_area(permiso.jefe_id)
       %td= permiso.autorizo
