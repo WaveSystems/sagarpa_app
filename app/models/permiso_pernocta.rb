@@ -1,5 +1,6 @@
 class PermisoPernocta < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'solicita_id'
+  belongs_to :vehiculo, :foreign_key => 'auto_id'
   before_save :default_values
   before_save :status_pernocta
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha_hora_salida, :fecha_hora_llegada, :domicilio_pernocta, :num_oficio, :solicita_id, :VoBo_id
@@ -16,6 +17,8 @@ class PermisoPernocta < ActiveRecord::Base
       self.estado = 'No autorizado'
     elsif self.estado == 'Rechazado'
       self.estado = 'Rechazado'
+    elsif self.estado == 'Finalizado'
+      self.estado = 'Finalizado'
     else
       self.estado = 'Autorizado'
     end

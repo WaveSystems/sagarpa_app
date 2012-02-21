@@ -1,5 +1,6 @@
 class PermisoDiario < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'solicita_id'
+  belongs_to :vehiculo, :foreign_key => 'auto_id'
   before_save :default_values
 
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha, :hora_salida, :hora_llegada, :solicita_id, :jefe_id
@@ -10,6 +11,8 @@ class PermisoDiario < ActiveRecord::Base
       self.estado = 'No autorizado'
     elsif self.estado == 'Rechazado'
       self.estado = 'Rechazado'
+    elsif self.estado == 'Finalizado'
+      self.estado = 'Finalizado'
     else
       self.estado = 'Autorizado'
     end
