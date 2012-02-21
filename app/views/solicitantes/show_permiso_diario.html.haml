@@ -19,14 +19,14 @@
   - @permiso_diario.each do |permiso|
     %tr
       %td= permiso.id
-      %td= permiso.auto_id
+      %td= Vehiculo.get_vehiculo_actual(permiso.auto_id)
       %td= permiso.justificacion
       %td= permiso.observaciones
       %td= permiso.fecha
       %td= permiso.hora_salida
       %td= permiso.hora_llegada
-      %td= permiso.solicita_id
-      %td= permiso.jefe_id
+      %td= @solicita
+      %td= User.get_jefe_area(permiso.jefe_id)
       %td= permiso.autorizo
       %td= permiso.estado
       %td= link_to "HTML", show_pdf_diario_path(permiso)

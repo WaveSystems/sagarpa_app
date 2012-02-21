@@ -31,7 +31,8 @@
         %h6 Presente
         %br
     #pdf-fecha(align="right")
-      %h6 Colima, Col. a = @permiso.fecha_hora_salida
+      %h6 Colima, Col. a 
+      %h6= "#{@permiso_pernocta.fecha_hora_salida.day} de #{@permiso_pernocta.fecha_hora_salida.month} de #{@permiso_pernocta.fecha_hora_salida.year}"
       %br
     #pdf-texto(align="left")
       %br

@@ -18,14 +18,14 @@
   - @permiso_pernocta.each do |permiso|
     %tr
       %td= permiso.id
-      %td= permiso.auto_id
+      %td= Vehiculo.get_vehiculo_actual(permiso.auto_id)
       %td= permiso.justificacion
       %td= permiso.observaciones
       %td= permiso.fecha_hora_salida
       %td= permiso.fecha_hora_llegada
       %td= permiso.domicilio_pernocta
       %td= permiso.num_oficio
-      %td= permiso.VoBo_id
+      %td= User.get_jefe_area(permiso.VoBo_id)
       %td= permiso.tramito
       %td= permiso.autorizo
       %td= permiso.estado

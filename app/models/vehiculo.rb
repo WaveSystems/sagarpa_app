@@ -14,4 +14,7 @@ class Vehiculo < ActiveRecord::Base
     self.estado = "Disponible" unless self.estado == "Ocupado"
   end
 
+  def self.get_vehiculo_actual(id)
+    return self.find(id).tipo
+  end
 end

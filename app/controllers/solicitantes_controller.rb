@@ -22,6 +22,7 @@ class SolicitantesController < ApplicationController
   # Render permso diario from javascript ajax request
   def show_permiso_diario
     @permiso_diario = PermisoDiario.get_user_permiso_diario(current_user.id).page(params[:page]).per(7)
+    @solicita = current_user.nombre
   end
 
   def show_permiso_pernocta
