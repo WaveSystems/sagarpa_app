@@ -11,11 +11,13 @@ class PermisoDiario < ActiveRecord::Base
       self.estado = 'No autorizado'
     elsif self.estado == 'Rechazado'
       self.estado = 'Rechazado'
-    elsif self.estado == 'Finalizado'
-      self.estado = 'Finalizado'
     else
       self.estado = 'Autorizado'
     end
+  end
+
+  def self.finish_permiso
+    self.estado = "Finalizado"
   end
 
   # The same behavior of permiso pernocta model

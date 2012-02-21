@@ -17,8 +17,6 @@ class PermisoPernocta < ActiveRecord::Base
       self.estado = 'No autorizado'
     elsif self.estado == 'Rechazado'
       self.estado = 'Rechazado'
-    elsif self.estado == 'Finalizado'
-      self.estado = 'Finalizado'
     else
       self.estado = 'Autorizado'
     end
@@ -35,5 +33,9 @@ class PermisoPernocta < ActiveRecord::Base
   # Get all the permisos of each user
   def self.get_user_permiso_pernocta(id)
     return PermisoPernocta.where("solicita_id = '#{id}'").order("id desc")
+  end
+
+  def self.finish_permiso
+    self.estado = "Finalizado"
   end
 end
