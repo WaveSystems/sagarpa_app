@@ -10,6 +10,9 @@ ActiveAdmin.register PermisoDiario do
     f.column :hora_llegada
     f.column :solicita_id
     f.column :jefe_id
+    f.column :estado
+    f.column :autorizo
+    default_actions
   end
   
 end

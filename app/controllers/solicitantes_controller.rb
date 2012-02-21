@@ -30,10 +30,16 @@ class SolicitantesController < ApplicationController
 
   def show_pdf
     @permiso_pernocta = PermisoPernocta.find(params[:id])
-    #@permiso_diario = PermisoDiario.find(params[:id])
     @solicita = User.find(@permiso_pernocta.solicita_id).nombre
     @VoBo = User.find(@permiso_pernocta.VoBo_id).nombre
     @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
+  end
+
+  def show_pdf_diario
+    @permiso_diario = PermisoDiario.find(params[:id])
+    @solicita = User.find(@permiso_diario.solicita_id).nombre
+    @VoBo = User.find(@permiso_diario.jefe_id).nombre
+    @vehiculo = Vehiculo.find(@permiso_diario.auto_id)
   end
 
   ## ================== Permiso diario section =================================

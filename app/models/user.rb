@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   has_many :permiso_diarios
   has_many :permiso_pernoctas
   has_many :vehiculos
+
   TIPOS = %w[normal asistente administrador]
   AUTORIZADO = %w[Si No]
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

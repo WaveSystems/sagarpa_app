@@ -22,7 +22,7 @@
     #pdf-titular
       #pdf-idpernocta(align="center")
         %h6 Número de Folio:
-        = @permiso_pernocta.id
+        = @permiso_diario.id
       #pdf-sello3(align="left")
         %br
         %h6 Dr. Salvador Becerra Rodríguez
@@ -31,7 +31,7 @@
         %h6 Presente
         %br
     #pdf-fecha(align="right")
-      %h6 Colima, Col. a = @permiso.fecha_hora_salida
+      %h6 Colima, Col. a = @permiso.fecha
       %br
     #pdf-texto(align="left")
       %br
@@ -61,58 +61,6 @@
             %th Fecha(s) requerida(s):
         %tbody
           %td
-            = @permiso_pernocta.justificacion
+            = @permiso_diario.justificacion
           %td
-            = @permiso_pernocta.observaciones
-          %td
-            = @permiso_pernocta.fecha_hora_salida
-            %h6 al
-            = @permiso_pernocta.fecha_hora_llegada
-    #pdf-tabla3
-      %table.index_table
-        %thead
-        %tr
-          %th Domicilio de pernocta:
-          %td= @permiso_pernocta.domicilio_pernocta
-    #pdf-firma2(align="center")
-      %h6 Vo.Bo:
-      %br
-      %br
-      %p ________________________
-      = @VoBo
-    #pdf-firma1(align="center")
-      %h6 Solicita:
-      %br
-      %br
-      %p ________________________
-      = @solicita
-    #pdf-firma4(align="center")
-      %h6 Autorizó:
-      %br
-      %br
-      %p ________________________
-      = @permiso_pernocta.autorizo
-    #pdf-firma3(align="center")
-      %h6 Tramitó:
-      %br
-      %br
-      %p ________________________
-      = @permiso_pernocta.tramito
-      /#pdf-resto(align="center")
-      /= @permiso_pernocta.justificacion
-      /%br
-      /= @permiso_pernocta.observaciones
-      /%br
-      /= @permiso_pernocta.tramito
-      /%br
-      /= @permiso_pernocta.autorizo
-      /%br
-      /= @solicita
-      /%br
-      /= @VoBo
-      /%br
-      /= @vehiculo.placa_actual
-      /%br
-      /= @vehiculo.brand
-      /%br
-      /= @vehiculo.year
+            = @permiso_diario.observaciones

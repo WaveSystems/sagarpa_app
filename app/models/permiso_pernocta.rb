@@ -1,6 +1,7 @@
 class PermisoPernocta < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'solicita_id'
   before_save :default_values
+  before_save :status_pernocta
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha_hora_salida, :fecha_hora_llegada, :domicilio_pernocta, :num_oficio, :solicita_id, :VoBo_id
 
 
@@ -8,8 +9,13 @@ class PermisoPernocta < ActiveRecord::Base
   def default_values
     self.tramito = 'Lic. Hector Hernandez Rolon' unless self.tramito
     self.autorizo = 'Dr. Salvador Becerra Rodriguez' unless self.autorizo
+  end
+  
+  def status_pernocta
     if self.estado == nil
       self.estado = 'No autorizado'
+    elsif self.estado == 'Rechazado'
+      self.estado = 'Rechazado'
     else
       self.estado = 'Autorizado'
     end

@@ -22,8 +22,7 @@ SagarpaApp::Application.routes.draw do
 
   match 'solicitante/history' => 'solicitantes#show_history', :as => :history_permiso
   match 'solicitante/:id/imprimir' => 'solicitantes#show_pdf', :as => :show_pdf
-
-  match 'solicitante/:id/imprimir_permiso_diario' => 'solicitantes#show_pdf_permiso_diario', :as => :show_pdf_permiso_diario
+  match 'solicitante/:id/imprimir_diario' => 'solicitantes#show_pdf_diario', :as => :show_pdf_diario
 
   match 'solicitante/:id/change_password' => 'solicitantes#change_password', :as => :change_password
   match 'solicitante/:id/update_password' => 'solicitantes#update_password', :as => :update_password
@@ -34,10 +33,12 @@ SagarpaApp::Application.routes.draw do
 
   match 'administrador/show_permiso_pernocta' => 'administradores#show_permiso_pernocta', :as => :show_permiso_pernocta
   match 'administrador/:id/autorizar_permiso_pernocta' => 'administradores#autorizar_permiso_pernocta!', :as => :autorizar_permiso_pernocta
+  match 'administrador/:id/rechazar_permiso_pernocta' => 'administradores#rechazar_permiso_pernocta!', :as => :rechazar_permiso_pernocta
   match 'administrador/search_permiso_pernocta' => 'administradores#search_permiso_pernocta', :as => :search_permiso_pernocta
 
   match 'administrador/show_permiso_diario' => 'administradores#show_permiso_diario', :as => :show_permiso_diario
   match 'administrador/:id/autorizar_permiso_diario' => 'administradores#autorizar_permiso_diario!', :as => :autorizar_permiso_diario
+  match 'administrador/:id/rechazar_permiso_diario' => 'administradores#rechazar_permiso_diario!', :as => :rechazar_permiso_diario
   match 'administrador/search_permiso_diario' => 'administradores#search_permiso_diario', :as => :search_permiso_diario
 
   match 'administrador/reportes' => 'administradores#reportes', :as => :reportes
@@ -49,4 +50,6 @@ SagarpaApp::Application.routes.draw do
   match 'administrador/reportes/permiso_diario' => 'administradores#show_reporte_permiso_diario', :as => :show_reporte_permiso_diario
 
   get 'vigilante' => 'vigilantes#index', :as => :index_vigilante
+  match 'vigilante/:id/terminar' => 'vigilantes#finish', :as => :finish_vigilante
+  match 'vigilante/tables' => 'vigilantes#tables', :as => :tables_vigilante
 end
