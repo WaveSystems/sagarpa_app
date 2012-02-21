@@ -26,10 +26,11 @@ class AdministradoresController < ApplicationController
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
 
-    if @vehiculo.estado == "Disponoble" && @permiso_pernocta.estado = "No autorizado"
+    if @vehiculo.estado == "Disponible" && @permiso_pernocta.estado = "No autorizado"
       @vehiculo.estado = "Ocupado"
       @vehiculo.save
-      @permiso_pernocta.update_attributes(params[:permiso_pernocta])
+      @permiso_pernocta.estado = "Autorizado"
+      @permiso_pernocta.save
     else
       flash[:alert]="Automovil no disponible"
     end
