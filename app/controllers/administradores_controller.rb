@@ -80,7 +80,7 @@ class AdministradoresController < ApplicationController
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
   def authorize_user!
-    unless current_user.tipo == "administrador" || current_user.tipo == "asistente"
+    unless current_user.tipo == "administrador" || current_user.tipo == "avanzado"
       flash[:alert]="Usuario no administrador"
       redirect_to :root
     end
