@@ -31,7 +31,7 @@
         %h6 Presente
         %br
     #pdf-fecha(align="right")
-      %h6= "Colima, Col. a #{@permiso_diario.fecha.to_s(:short)} de #{@permiso_diario.fecha.year}"
+      %h6= "Colima, Col. a #{@permiso_diario.fecha.day} de #{@permiso_diario.fecha.month} de #{@permiso_diario.fecha.year}"
       %br
     #pdf-texto(align="left")
       %br
@@ -65,7 +65,7 @@
           %td
             = @permiso_diario.observaciones
           %td
-            %h6= "#{@permiso_diario.fecha.to_s(:short)} de #{@permiso_diario.fecha.year}, de las #{@permiso_diario.hora_salida.hour}:#{@permiso_diario.hora_salida.min} a las #{@permiso_diario.hora_llegada.hour}:#{@permiso_diario.hora_llegada.min}"
+            %h6= "#{@permiso_diario.fecha.day} / #{@permiso_diario.fecha.month} / #{@permiso_diario.fecha.year}, de las #{@permiso_diario.hora_salida.hour}:#{@permiso_diario.hora_salida.min} a las #{@permiso_diario.hora_llegada.hour}:#{@permiso_diario.hora_llegada.min}"
       %br
       %br
       %br
