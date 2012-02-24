@@ -1,6 +1,8 @@
 class Vehiculo < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'responsable_id'
   belongs_to :area, :foreign_key => 'area_id'
+  has_many :permiso_pernoctas
+  has_many :permiso_diarios
   before_save :set_available
 
   # Get the area vehicles
@@ -12,4 +14,7 @@ class Vehiculo < ActiveRecord::Base
     self.estado = "Disponible" unless self.estado == "Ocupado"
   end
 
+  def self.get_vehiculo_actual(id)
+    return self.find(id).tipo
+  end
 end

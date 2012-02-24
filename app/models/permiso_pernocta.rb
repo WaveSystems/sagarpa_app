@@ -1,5 +1,6 @@
 class PermisoPernocta < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'solicita_id'
+  belongs_to :vehiculo, :foreign_key => 'auto_id'
   before_save :default_values
   before_save :status_pernocta
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha_hora_salida, :fecha_hora_llegada, :domicilio_pernocta, :num_oficio, :solicita_id, :VoBo_id
@@ -32,5 +33,9 @@ class PermisoPernocta < ActiveRecord::Base
   # Get all the permisos of each user
   def self.get_user_permiso_pernocta(id)
     return PermisoPernocta.where("solicita_id = '#{id}'").order("id desc")
+  end
+
+  def self.finish_permiso
+    self.estado = "Finalizado"
   end
 end

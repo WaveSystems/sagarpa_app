@@ -26,13 +26,13 @@ class AdministradoresController < ApplicationController
     @permiso_pernocta = PermisoPernocta.find(params[:id])
     @vehiculo = Vehiculo.find(@permiso_pernocta.auto_id)
 
-    if @vehiculo.estado == "Disponible" && @permiso_pernocta.estado = "No autorizado"
+    if @vehiculo.estado == "Disponible" && @permiso_pernocta.estado == "No autorizado"
       @vehiculo.estado = "Ocupado"
       @vehiculo.save
       @permiso_pernocta.estado = "Autorizado"
       @permiso_pernocta.save
     else
-      flash[:alert]="Automovil no disponible"
+      flash[:alert]="Automovil no disponible o el permiso ya ha sido autorizado"
     end
 
     redirect_to "/administrador"
@@ -42,13 +42,13 @@ class AdministradoresController < ApplicationController
     @permiso_diario = PermisoDiario.find(params[:id])
     @vehiculo = Vehiculo.find(@permiso_diario.auto_id)
 
-    if @vehiculo.estado == "Disponible" && @permiso_diario.estado = "No autorizado"
+    if @vehiculo.estado == "Disponible" && @permiso_diario.estado == "No autorizado"
       @vehiculo.estado = "Ocupado"
       @vehiculo.save
       @permiso_diario.autorizo = current_user.nombre
       @permiso_diario.save
     else
-      flash[:alert]="Automovil no disponible"
+      flash[:alert]="Automovil no disponible o el permiso ya ha sido autorizado"
     end
 
     redirect_to "/administrador"
@@ -56,23 +56,31 @@ class AdministradoresController < ApplicationController
 
   def rechazar_permiso_pernocta!
     @permiso_pernocta = PermisoPernocta.find(params[:id])
-    @permiso_pernocta.estado = "Rechazado"
-    @permiso_pernocta.save
+    if @permiso_pernocta.estado == "No autorizado"
+      @permiso_pernocta.estado = "Rechazado"
+      @permiso_pernocta.save
+    else
+      flash[:alert]="El permiso ya fue autorizado"
+    end
     redirect_to "/administrador"
   end
 
   def rechazar_permiso_diario!
     @permiso_diario = PermisoDiario.find(params[:id])
-    @permiso_diario.estado = "Rechazado"
-    @permiso_diario.autorizo = current_user.nombre
-    @permiso_diario.save
+    if @permiso_diario.estado == "No autorizado"
+      @permiso_diario.estado = "Rechazado"
+      @permiso_diario.autorizo = current_user.nombre
+      @permiso_diario.save
+    else
+      flash[:alert]="El permiso ya fue autorizado"
+    end
     redirect_to "/administrador"
   end
 
   # This helper method will allow us to authorize users if they have privileges to use this side of the application
   private
   def authorize_user!
-    unless current_user.tipo == "administrador" || current_user.tipo == "asistente"
+    unless current_user.tipo == "administrador" || current_user.tipo == "avanzado"
       flash[:alert]="Usuario no administrador"
       redirect_to :root
     end

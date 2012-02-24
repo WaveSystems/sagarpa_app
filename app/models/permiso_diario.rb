@@ -1,5 +1,6 @@
 class PermisoDiario < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'solicita_id'
+  belongs_to :vehiculo, :foreign_key => 'auto_id'
   before_save :default_values
 
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha, :hora_salida, :hora_llegada, :solicita_id, :jefe_id
@@ -13,6 +14,10 @@ class PermisoDiario < ActiveRecord::Base
     else
       self.estado = 'Autorizado'
     end
+  end
+
+  def self.finish_permiso
+    self.estado = "Finalizado"
   end
 
   # The same behavior of permiso pernocta model

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :permiso_pernoctas
   has_many :vehiculos
 
-  TIPOS = %w[normal asistente administrador]
+  TIPOS = %w[normal avanzado administrador]
   AUTORIZADO = %w[Si No]
 
   # Include default devise modules. Others available are:
