@@ -15,17 +15,35 @@
         %td
           %h4= f.label "Justificacion:"
         %td
-          = f.radio_button :justificacion,"Estancia del vehiculo en el taller"
-          %b= f.label "Estancia del vehiculo en el taller"
+          = f.radio_button :justificacion,"Visitas a talleres."
+          %b= f.label "Visitas a talleres"
           %br
-          = f.radio_button :justificacion,"Comision local no mayor a tres dias segun oficion de comision anexo"
-          %b= f.label "Comision local no mayor a tres dias segun oficion de comision anexo"
+          = f.radio_button :justificacion,"Visitas a proveedores."
+          %b= f.label "Visitas a proveedores."
           %br
-          = f.radio_button :justificacion,"Comision foranea, segun oficio de comision anexo"
-          %b= f.label "Comision foranea, segun oficio de comision anexo"
+          = f.radio_button :justificacion,"Salida al banco."
+          %b= f.label "Salida al banco."
+          %br
+          = f.radio_button :justificacion,"Salida al ISSSTE."
+          %b= f.label "Salida al ISSSTE."
+          %br
+          = f.radio_button :justificacion,"Salida al complejo Administrativo."
+          %b= f.label "Salida al complejo Administrativo."
+          %br
+          = f.radio_button :justificacion,"Entrega de correspondencia."
+          %b= f.label "Entrega de correspondencia."
+          %br
+          = f.radio_button :justificacion,"Entrega de documentacion."
+          %b= f.label "Entrega de documentación."
+          %br
+          = f.radio_button :justificacion,"Traslado de personal."
+          %b= f.label "Traslado de personal."
+          %br
+          = f.radio_button :justificacion,"Comisiones oficiales."
+          %b= f.label "Comisiones oficiales."
           %br
           = f.radio_button :justificacion,"Otro"
-          %b= f.label "Otro (Especificado en las observaciones)"
+          %b= f.label "Otro (Especificado en las observaciones)."
       %tr
         %td
           %h4= f.label :observaciones
