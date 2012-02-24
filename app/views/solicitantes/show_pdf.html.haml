@@ -65,9 +65,9 @@
           %td
             = @permiso_pernocta.observaciones
           %td
-            = "De #{@permiso_pernocta.fecha_hora_salida.day} / #{@permiso_pernocta.fecha_hora_salida.month} / #{@permiso_pernocta.fecha_hora_salida.year} a las #{@permiso_pernocta.fecha_hora_salida.hour}:#{@permiso_pernocta.fecha_hora_salida.min}"
+            = @permiso_pernocta.fecha_hora_salida.to_s(:short)
             %h6 al
-            = "De #{@permiso_pernocta.fecha_hora_llegada.day} / #{@permiso_pernocta.fecha_hora_llegada.month} / #{@permiso_pernocta.fecha_hora_llegada.year} a las #{@permiso_pernocta.fecha_hora_llegada.hour}:#{@permiso_pernocta.fecha_hora_llegada.min}"
+            = @permiso_pernocta.fecha_hora_llegada.to_s(:short)
     #pdf-tabla3
       %table.index_table
         %thead
