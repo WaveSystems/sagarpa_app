@@ -3,8 +3,8 @@ ActiveAdmin.register Vehiculo do
     f.inputs "Vehiculo" do
       f.input :numero, :label => "No."
       f.input :responsable_id, :label => "ID Responsable"
-      f.input :area_id, :label => "ID area"
-      f.input :brand
+      f.input :area_id, :as => :select, :collection => Area.get_areas
+      f.input :brand, :label => "Marca"
       f.input :tipo
       f.input :cilindros
       f.input :placa_actual
