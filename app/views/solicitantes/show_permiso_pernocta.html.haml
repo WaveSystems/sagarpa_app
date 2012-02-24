@@ -21,8 +21,8 @@
       %td= Vehiculo.get_vehiculo_actual(permiso.auto_id)
       %td= permiso.justificacion
       %td= permiso.observaciones
-      %td= permiso.fecha_hora_salida
-      %td= permiso.fecha_hora_llegada
+      %td= permiso.fecha_hora_salida.to_s(:short)
+      %td= permiso.fecha_hora_llegada.to_s(:short)
       %td= permiso.domicilio_pernocta
       %td= permiso.num_oficio
       %td= User.get_jefe_area(permiso.VoBo_id)
