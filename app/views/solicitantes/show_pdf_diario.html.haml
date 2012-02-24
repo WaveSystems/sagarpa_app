@@ -58,9 +58,28 @@
           %tr
             %th Justificación:
             %th Observaciones:
-            %th Fecha(s) requerida(s):
+            %th Fecha y hora requeridas:
         %tbody
           %td
             = @permiso_diario.justificacion
           %td
             = @permiso_diario.observaciones
+          %td
+            %h6= "#{@permiso_diario.fecha.day} / #{@permiso_diario.fecha.month} / #{@permiso_diario.fecha.year}, de #{@permiso_diario.hora_salida.hour}:#{@permiso_diario.hora_salida.min} a #{@permiso_diario.hora_llegada.hour}:#{@permiso_diario.hora_llegada.min}"
+      %br
+      %br
+      %br
+      %br
+      %table.index_table
+        %thead
+          %tr
+            %th Solicita:
+            %th Jefe de Área:
+            %th Autoriza:
+        %tbody
+          %td
+            = @solicita
+          %td
+            = @VoBo
+          %td
+            = @permiso_diario.autorizo
