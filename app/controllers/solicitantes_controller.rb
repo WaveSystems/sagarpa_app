@@ -1,5 +1,6 @@
 class SolicitantesController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :authorize_user!
 
   def menu
   end
@@ -66,5 +67,13 @@ class SolicitantesController < ApplicationController
     @user.update_attributes(params[:user])
     flash[:alert]="Cambios guardados exitosamente"
     redirect_to "/solicitante"
+  end
+
+  private
+  def authorize_user!
+    unless current_user.autorizado == "Si"
+      flash[:alert]="Usuario no Autorizado"
+      redirect_to :root
+    end
   end
 end
