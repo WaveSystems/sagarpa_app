@@ -1,10 +1,9 @@
-#search_form(align = "center")
-  = form_tag "/administrador/show_permiso_diario", :remote => :true do
-    %table
-      %tbody
-        %tr
-          %td(width = "200px")
-            %h3
-              %b= label_tag "Ingrese número de folio:"
-          %td(width = "300px")= text_field_tag :id
-          %td= button_to "Buscar"
+= form_tag "/administrador/show_permiso_diario", :remote => :true do
+  %table
+    %tbody
+      %tr
+        %td(width = "200px")
+          %h3
+            %b= label_tag "Ingrese número de folio de permiso de uso diario:"
+        %td(width = "300px")= text_field_tag :id
+        %td= button_to "Buscar"
