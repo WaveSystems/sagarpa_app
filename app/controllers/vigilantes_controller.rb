@@ -6,7 +6,6 @@ class VigilantesController < ApplicationController
 
   def tables
     @vehiculo_ocupado = Vehiculo.where("estado = 'Ocupado'")
-    @vehiculo_disponible = Vehiculo.where("estado = 'Disponible'")
   end
 
   def finish
