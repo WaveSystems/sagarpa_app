@@ -10,6 +10,13 @@ class VigilantesController < ApplicationController
 
   def finish
     @vehiculo = Vehiculo.find(params[:id])
+    @permiso_diario = PermisoDiario.find_by_auto_id(@vehiculo.id)
+    @permiso_pernocta = PermisoPernocta.find_by_auto_id(@vehiculo.id)
+    if @permiso_pernocta == nil
+      PermisosHistory.register(@permiso_diario)
+    else
+      PermisosHistory.register(@permiso_pernocta)
+    end
     @vehiculo.estado = "Disponible"
     @vehiculo.save
     redirect_to "/vigilante"
