@@ -16,10 +16,16 @@ class AdministradoresController < ApplicationController
 
   def show_permiso_pernocta
     @permiso_pernocta = PermisoPernocta.find(params[:id])
+    @jefe = User.get_jefe_area(@permiso_pernocta.VoBo_id)
+    @solicita = User.get_solicitante(@permiso_pernocta.solicita_id)
+    @vehiculo = Vehiculo.get_vehiculo_permiso(@permiso_pernocta.auto_id)
   end
 
   def show_permiso_diario
     @permiso_diario = PermisoDiario.find(params[:id])
+    @jefe = User.get_jefe_area(@permiso_diario.jefe_id)
+    @solicita = User.get_solicitante(@permiso_diario.solicita_id)
+    @vehiculo = Vehiculo.get_vehiculo_permiso(@permiso_diario.auto_id)
   end
 
   def autorizar_permiso_pernocta!

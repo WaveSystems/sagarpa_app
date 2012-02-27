@@ -14,6 +14,11 @@ class Vehiculo < ActiveRecord::Base
     self.estado = "Disponible" unless self.estado == "Ocupado"
   end
 
+  def self.get_vehiculo_permiso(id)
+    vehiculo = self.find(id)
+    return "#{vehiculo.brand} #{vehiculo.tipo} #{vehiculo.year}"
+  end
+
   def self.get_vehiculo_actual(id)
     return self.find(id).tipo
   end

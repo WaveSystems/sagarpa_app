@@ -1,34 +1,62 @@
-%br
-%b Permiso de Diario No
-= @permiso_diario.id
-%br
-%b Id Vehiculo
-= @permiso_diario.auto_id
-%br
-%b Justificacion:
-= @permiso_diario.justificacion
-%br
-%b Observaciones:
-= @permiso_diario.observaciones
-%br
-%b Fecha y hora de salida:
-= @permiso_diario.fecha
-%br
-%b Hora de Salida:
-= @permiso_diario.hora_salida
-%br
-%b Hora de llegada:
-= @permiso_diario.hora_llegada
-%br
-%b Solicita:
-= @permiso_diario.solicita_id
-%br
-%b VoBo:
-= @permiso_diario.jefe_id
-%br
-%b Estado:
-= @permiso_diario.estado
-%br
-= button_to "Autorizar", autorizar_permiso_diario_path(@permiso_diario.id) 
-= button_to "Rechazar", rechazar_permiso_diario_path(@permiso_diario.id) 
-= button_to "Atras", menu_administrador_path 
+%table.index_table
+  %tbody
+    %tr
+      %th(width = "200px") Permiso de Diario No
+      %td
+        %h4
+          %b= @permiso_diario.id
+    %tr
+      %th Id Vehiculo
+      %td
+        %h4
+          %b= @vehiculo
+    %tr
+      %th Justificacion:
+      %td
+        %h4
+          %b= @permiso_diario.justificacion
+    %tr
+      %th Observaciones:
+      %td
+        %h4
+          %b= @permiso_diario.observaciones
+    %tr
+      %th Fecha:
+      %td
+        %h4
+          %b= @permiso_diario.fecha
+    %tr
+      %th Hora de Salida:
+      %td
+        %h4
+          %b= "#{@permiso_diario.hora_salida.hour}:#{@permiso_diario.hora_salida.min}"
+    %tr
+      %th Hora de llegada:
+      %td
+        %h4
+          %b= "#{@permiso_diario.hora_llegada.hour}:#{@permiso_diario.hora_llegada.min}"
+    %tr
+      %th Solicita:
+      %td
+        %h4
+          %b= @solicita
+    %tr
+      %th Jefe Área:
+      %td
+        %h4
+          %b= @jefe
+    %tr
+      %th Autorizo:
+      %td
+        %h4
+          %b= @permiso_diario.autorizo
+    %tr
+      %th Estado:
+      %td
+        %h4
+          %b= @permiso_diario.estado
+    %tr
+      %td
+        %h4= button_to "Autorizar", autorizar_permiso_diario_path(@permiso_diario.id) 
+      %td
+        %h4= button_to "Rechazar", rechazar_permiso_diario_path(@permiso_diario.id) 
