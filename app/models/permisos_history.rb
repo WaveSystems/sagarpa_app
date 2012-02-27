@@ -1,16 +1,17 @@
 class PermisosHistory < ActiveRecord::Base
   def self.register(permiso)
+    log = self.new
     vehiculo = Vehiculo.get_vehiculo_permiso(permiso.auto_id)
-    solicitante = User.get_solicitante(permiso.solicitante_id)
-    self.event = "Registrada la entrada de #{vehiculo} a las #{Time.now.hour}:#{Time.now.min} el #{Time.now.day}/#{Time.now.month}/#{Time.now.year}, permiso #{permiso.id}, por #{solicitante}"
-    self.permiso_id = permiso.id
-    self.auto_id = permiso.auto_id
-    self.user_id = permiso.solicitante_id
-    if permiso.fecha
-      self.tipo_permiso = "Permiso diario"
+    solicitante = User.get_solicitante(permiso.solicita_id)
+    log.event = "Registrada la entrada de #{vehiculo} a las #{Time.now.hour}:#{Time.now.min} el #{Time.now.day}/#{Time.now.month}/#{Time.now.year}, permiso #{permiso.id}, por #{solicitante}"
+    log.permiso_id = permiso.id
+    log.auto_id = permiso.auto_id
+    log.user_id = permiso.solicita_id
+    if permiso.tipo == "Permiso Diario"
+      log.tipo_permiso = permiso.tipo
     else
-      self.tipo_permiso = "Permiso de no pernocta"
+      log.tipo_permiso = "Permiso Pernocta"
     end
-    self.save
+    log.save
   end
 end

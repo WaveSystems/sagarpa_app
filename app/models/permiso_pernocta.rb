@@ -10,6 +10,7 @@ class PermisoPernocta < ActiveRecord::Base
   def default_values
     self.tramito = 'Lic. Hector Hernandez Rolon' unless self.tramito
     self.autorizo = 'Dr. Salvador Becerra Rodriguez' unless self.autorizo
+    self.tipo = 'Permiso Pernocta'
   end
   
   def status_pernocta

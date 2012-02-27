@@ -7,6 +7,7 @@ class PermisoDiario < ActiveRecord::Base
 
   # Check and add the default values
   def default_values
+    self.tipo = 'Permiso Diario'
     if self.estado == nil
       self.estado = 'No autorizado'
     elsif self.estado == 'Rechazado'

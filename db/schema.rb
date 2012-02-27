@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221004006) do
+ActiveRecord::Schema.define(:version => 20120227040807) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20120221004006) do
     t.integer  "jefe_id"
     t.string   "estado"
     t.string   "autorizo"
+    t.string   "tipo"
   end
 
   create_table "permiso_pernocta", :force => true do |t|
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20120221004006) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "estado"
+    t.string   "tipo"
   end
 
   create_table "permisos_histories", :force => true do |t|
