@@ -5,6 +5,21 @@ class PermisoPernocta < ActiveRecord::Base
   before_save :status_pernocta
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha_hora_salida, :fecha_hora_llegada, :domicilio_pernocta, :num_oficio, :solicita_id, :VoBo_id
 
+  MONTHS = {
+    "1" => "Enero",
+    "2" => "Febrero",
+    "3" => "Marzo",
+    "4" => "Abril",
+    "5" => "Mayo",
+    "6" => "Junio",
+    "7" => "Julio",
+    "8" => "Agosto",
+    "9" => "Septiembre",
+    "10" => "Octubre",
+    "11" => "Noviembre",
+    "12" => "Diciembre"
+  }
+
 
   # Default values for the aplication
   def default_values

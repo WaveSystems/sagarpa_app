@@ -1,77 +1,54 @@
 = form_for @permiso_pernocta, :url => "create" do |f|
   #formpos
-    %table
-      %tr
-        %td(width="150")
-          %h4= f.label "Folio"
-        %td
-          = f.label "#{@id}"
-      %tr
-        %td
-          %h4= f.label :auto_id
-        %td
-          = f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
-      %tr
-        %td
-          %h4= f.label "Justificacion:"
-        %td
-          = f.radio_button :justificacion,"Estancia del vehiculo en el taller"
-          %b= f.label "Estancia del vehiculo en el taller"
-          %br
-          = f.radio_button :justificacion,"Comision local no mayor a tres dias segun oficion de comision anexo"
-          %b= f.label "Comision local no mayor a tres dias segun oficion de comision anexo"
-          %br
-          = f.radio_button :justificacion,"Comision foranea, segun oficio de comision anexo"
-          %b= f.label "Comision foranea, segun oficio de comision anexo"
-          %br
-          = f.radio_button :justificacion,"Otro"
-          %b= f.label "Otro (Especificado en las observaciones)"
-      %tr
-        %td
-          %h4= f.label :observaciones
-        %td
-          = f.text_field :observaciones
-      %tr
-        %td
-          %h4= f.label :fecha_hora_salida
-        %td
-          = f.datetime_select :fecha_hora_salida
-      %tr
-        %td
-          %h4= f.label :fecha_hora_llegada
-        %td
-          = f.datetime_select :fecha_hora_llegada
-      %tr
-        %td
-          %h4= f.label :domicilio_pernocta
-        %td
-          = f.text_field :domicilio_pernocta
-      %tr
-        %td
-          %h4= f.label :num_oficio
-        %td
-          = f.text_field :num_oficio
-      %tr
-        %td
-          %h4= f.label :solicita_id 
-        %td
-          = f.label "#{@solicita}"
-      %tr
-        %td
-          %h4= f.label :VoBo_id 
-        %td
-          = f.label "#{@VoBo}"
-      %tr
-        %td
-          %h4= f.label :tramita 
-        %td
-          = f.label "Lic. Hector Hernandez Rolon"
-      %tr
-        %td
-          %h4= f.label :Autoriza 
-        %td
-          = f.label "Dr. Salvador Becerra Rodriguez"
-      %tr
-        %td
-        %td
-          = f.submit "Crear permiso"
+    %table.index_table
+      %tbody
+        %tr
+          %th(width="150px")= f.label "Folio"
+          %td= f.label "#{@id}"
+        %tr
+          %th= f.label :auto_id
+          %td= f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
+        %tr
+          %th= f.label "Justificación"
+          %td
+            = f.radio_button :justificacion,"Estancia del vehiculo en el taller"
+            %b= f.label "Estancia del vehiculo en el taller"
+            %br
+            = f.radio_button :justificacion,"Comision local no mayor a tres dias segun oficion de comision anexo"
+            %b= f.label "Comision local no mayor a tres dias segun oficion de comision anexo"
+            %br
+            = f.radio_button :justificacion,"Comision foranea, segun oficio de comision anexo"
+            %b= f.label "Comision foranea, segun oficio de comision anexo"
+            %br
+            = f.radio_button :justificacion,"Otro"
+            %b= f.label "Otro (Especificado en las observaciones)"
+        %tr
+          %th= f.label :observaciones
+          %td= f.text_field :observaciones
+        %tr
+          %th= f.label :fecha_hora_salida
+          %td= f.datetime_select :fecha_hora_salida
+        %tr
+          %th= f.label :fecha_hora_llegada
+          %td= f.datetime_select :fecha_hora_llegada
+        %tr
+          %th= f.label :domicilio_pernocta
+          %td= f.text_field :domicilio_pernocta
+        %tr
+          %th= f.label :num_oficio
+          %td= f.text_field :num_oficio
+        %tr
+          %th Solicita
+          %td= @solicita
+        %tr
+          %th Vo.Bo.
+          %td= @VoBo
+        %tr
+          %th Tramita
+          %td Lic. Hector Hernandez Rolón
+        %tr
+          %th Autoriza
+          %td Dr. Salvador Becerra Rodriguez
+        %tr
+          %td
+          %td= f.submit "Crear permiso"

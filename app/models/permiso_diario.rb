@@ -5,6 +5,21 @@ class PermisoDiario < ActiveRecord::Base
 
   validates_presence_of :auto_id, :justificacion, :observaciones, :fecha, :hora_salida, :hora_llegada, :solicita_id, :jefe_id
 
+  MONTHS = {
+    "1" => "Enero",
+    "2" => "Febrero",
+    "3" => "Marzo",
+    "4" => "Abril",
+    "5" => "Mayo",
+    "6" => "Junio",
+    "7" => "Julio",
+    "8" => "Agosto",
+    "9" => "Septiembre",
+    "10" => "Octubre",
+    "11" => "Noviembre",
+    "12" => "Diciembre"
+  }
+
   # Check and add the default values
   def default_values
     self.tipo = 'Permiso Diario'

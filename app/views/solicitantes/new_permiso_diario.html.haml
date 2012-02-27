@@ -1,80 +1,63 @@
 = form_for @permiso_diario, :url => "create_permiso_diario" do |f|
   #formpos
-    %table
-      %tr
-        %td(width="150")
-          %h4= f.label "Folio"
-        %td
-          = f.label "#{@id}"
-      %tr
-        %td
-          %h4= f.label :auto_id
-        %td
-          = f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
-      %tr
-        %td
-          %h4= f.label "Justificacion:"
-        %td
-          = f.radio_button :justificacion,"Visitas a talleres."
-          %b= f.label "Visitas a talleres"
-          %br
-          = f.radio_button :justificacion,"Visitas a proveedores."
-          %b= f.label "Visitas a proveedores."
-          %br
-          = f.radio_button :justificacion,"Salida al banco."
-          %b= f.label "Salida al banco."
-          %br
-          = f.radio_button :justificacion,"Salida al ISSSTE."
-          %b= f.label "Salida al ISSSTE."
-          %br
-          = f.radio_button :justificacion,"Salida al complejo Administrativo."
-          %b= f.label "Salida al complejo Administrativo."
-          %br
-          = f.radio_button :justificacion,"Entrega de correspondencia."
-          %b= f.label "Entrega de correspondencia."
-          %br
-          = f.radio_button :justificacion,"Entrega de documentacion."
-          %b= f.label "Entrega de documentación."
-          %br
-          = f.radio_button :justificacion,"Traslado de personal."
-          %b= f.label "Traslado de personal."
-          %br
-          = f.radio_button :justificacion,"Comisiones oficiales."
-          %b= f.label "Comisiones oficiales."
-          %br
-          = f.radio_button :justificacion,"Otro"
-          %b= f.label "Otro (Especificado en las observaciones)."
-      %tr
-        %td
-          %h4= f.label :observaciones
-        %td
-          = f.text_field :observaciones
-      %tr
-        %td
-          %h4= f.label :fecha
-        %td
-          = f.date_select :fecha
-      %tr
-        %td
-          %h4= f.label :hora_salida
-        %td
-          = f.time_select :hora_salida
-      %tr
-        %td
-          %h4= f.label :hora_llegada
-        %td
-          = f.time_select :hora_llegada
-      %tr
-        %td
-          %h4= f.label "Solicita:"
-        %td
-          = f.label "#{@solicita}"
-      %tr
-        %td
-          %h4= f.label "Jefe de Área:"
-        %td
-          = f.label "#{@jefe_area}"
-      %tr
-        %td
-        %td
-          = f.submit "Crear permiso"
+    %table.index_table
+      %tbody
+        %tr
+          %th(width="150") Folio
+          %td= f.label "#{@id}"
+        %tr
+          %th= f.label :auto_id
+          %td= f.select :auto_id, @vehiculos.collect {|p| [p.tipo, p.id]}
+        %tr
+          %th Justificación:
+          %td
+            = f.radio_button :justificacion,"Visitas a talleres."
+            %b= f.label "Visitas a talleres"
+            %br
+            = f.radio_button :justificacion,"Visitas a proveedores."
+            %b= f.label "Visitas a proveedores."
+            %br
+            = f.radio_button :justificacion,"Salida al banco."
+            %b= f.label "Salida al banco."
+            %br
+            = f.radio_button :justificacion,"Salida al ISSSTE."
+            %b= f.label "Salida al ISSSTE."
+            %br
+            = f.radio_button :justificacion,"Salida al complejo Administrativo."
+            %b= f.label "Salida al complejo Administrativo."
+            %br
+            = f.radio_button :justificacion,"Entrega de correspondencia."
+            %b= f.label "Entrega de correspondencia."
+            %br
+            = f.radio_button :justificacion,"Entrega de documentacion."
+            %b= f.label "Entrega de documentación."
+            %br
+            = f.radio_button :justificacion,"Traslado de personal."
+            %b= f.label "Traslado de personal."
+            %br
+            = f.radio_button :justificacion,"Comisiones oficiales."
+            %b= f.label "Comisiones oficiales."
+            %br
+            = f.radio_button :justificacion,"Otro"
+            %b= f.label "Otro (Especificado en las observaciones)."
+        %tr
+          %th= f.label :observaciones
+          %td= f.text_field :observaciones
+        %tr
+          %th= f.label :fecha
+          %td= f.date_select :fecha
+        %tr
+          %th= f.label :hora_salida
+          %td= f.time_select :hora_salida
+        %tr
+          %th= f.label :hora_llegada
+          %td= f.time_select :hora_llegada
+        %tr
+          %th= f.label "Solicita:"
+          %td= f.label "#{@solicita}"
+        %tr
+          %th= f.label "Jefe de Área:"
+          %td= f.label "#{@jefe_area}"
+        %tr
+          %td
+          %td= f.submit "Crear permiso"
