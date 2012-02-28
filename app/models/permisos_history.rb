@@ -1,4 +1,7 @@
 class PermisosHistory < ActiveRecord::Base
+
+  TIPOS = ["Permiso Diario"," Permiso Pernocta"]
+
   def self.register(permiso)
     log = self.new
     vehiculo = Vehiculo.get_vehiculo_permiso(permiso.auto_id)

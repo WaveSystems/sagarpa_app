@@ -1,6 +1,6 @@
 ActiveAdmin.register PermisosHistory do
   
-  filter :tipo_permiso
+  filter :tipo_permiso, :as => :select, :collection => proc {PermisosHistory::TIPOS}
 
   index do |t|
     t.column :id
