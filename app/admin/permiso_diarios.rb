@@ -1,5 +1,9 @@
 ActiveAdmin.register PermisoDiario do
 
+  filter :solicita_id,:as => :select, :collection => proc { User.get_users }
+  filter :auto_id ,:as => :select, :collection => proc { Vehiculo.get_vehiculos }
+  filter :fecha
+
   index do |f|
     f.column :id
     f.column :auto_id

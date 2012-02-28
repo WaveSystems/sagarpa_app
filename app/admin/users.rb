@@ -4,6 +4,7 @@ ActiveAdmin.register User do
       f.input :nombre
       f.input :email
       f.input :password
+      f.input :password_confirmation
       f.input :area_id, :as => :select, :collection => Area.get_areas
       f.input :autorizado, :as => :radio, :collection => User::AUTORIZADO
       f.input :tipo, :as => :radio, :collection => User::TIPOS

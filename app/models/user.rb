@@ -36,4 +36,9 @@ class User < ActiveRecord::Base
       false
     end
   end
+
+  def self.get_users
+    user = User.all
+    user.collect { |p| [ p.nombre, p.id ] }
+  end
 end

@@ -22,4 +22,9 @@ class Vehiculo < ActiveRecord::Base
   def self.get_vehiculo_actual(id)
     return self.find(id).tipo
   end
+
+  def self.get_vehiculos
+    vehiculo = Vehiculo.all
+    vehiculo.collect { |p| [ p.placa_actual, p.id ] }
+  end
 end
