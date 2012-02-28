@@ -53,11 +53,11 @@
           %th= f.label :hora_llegada
           %td= f.time_select :hora_llegada
         %tr
-          %th= f.label "Solicita:"
-          %td= f.label "#{@solicita}"
+          %th Solicita:
+          %td= @solicita
         %tr
-          %th= f.label "Jefe de Área:"
-          %td= f.label "#{@jefe_area}"
+          %th Jefe de Área
+          %td= @jefe_area
         %tr
           %td
           %td= f.submit "Crear permiso"
