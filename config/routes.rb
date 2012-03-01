@@ -52,4 +52,5 @@ SagarpaApp::Application.routes.draw do
   get 'vigilante' => 'vigilantes#index', :as => :index_vigilante
   match 'vigilante/:id/terminar' => 'vigilantes#finish', :as => :finish_vigilante
   match 'vigilante/tables' => 'vigilantes#tables', :as => :tables_vigilante
+  match '*a', :to => 'home#error404'
 end

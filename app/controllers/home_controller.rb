@@ -5,4 +5,6 @@ class HomeController < ApplicationController
   end
   def about
   end
+  def error404
+  end
 end
